@@ -270,3 +270,48 @@
 .ds-popover { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
   box-shadow:var(--shadow-popover); padding:12px 14px; font-size:var(--fs-caption); color:var(--text-secondary);
   max-width:240px; z-index:var(--z-dropdown); }
+
+/* ============================================================
+   Phase 4: 데이터 시각화
+   색은 --viz-1~6 (foundations.md) + 상태색. 차트 SVG 레시피는 components.md.
+   ============================================================ */
+
+/* ---- Stat tile (확장 KPI) ------------------------------ */
+.ds-stat { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:16px 18px; }
+.ds-stat .label { font-size:var(--fs-caption); color:var(--text-tertiary); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; }
+.ds-stat .value { font-size:28px; font-weight:var(--fw-medium); letter-spacing:var(--ls-tight); line-height:1.2; font-variant-numeric:tabular-nums; }
+.ds-stat .value small { font-size:15px; color:var(--text-tertiary); margin-left:3px; letter-spacing:0; }
+.ds-stat .foot { margin-top:8px; }
+.ds-stat .spark { display:block; width:100%; height:36px; margin-top:10px; }
+
+/* ---- Delta (추세 지표) --------------------------------- */
+.ds-delta { display:inline-flex; align-items:center; gap:3px; font-size:var(--fs-footnote); font-weight:var(--fw-medium); }
+.ds-delta.pos { color:var(--success); }   /* 문맥상 "좋음" */
+.ds-delta.neg { color:var(--danger); }    /* 문맥상 "나쁨" */
+.ds-delta.neutral { color:var(--text-tertiary); }
+/* 참고: 한국 증시 관습(상승=빨강)이 필요하면 pos↔neg 색을 프로젝트에서 스왑 */
+
+/* ---- 가로 막대 차트 ------------------------------------ */
+.ds-bars { display:flex; flex-direction:column; gap:10px; }
+.ds-bar-row { display:flex; align-items:center; gap:10px; font-size:var(--fs-caption); }
+.ds-bar-row .k { width:52px; color:var(--text-secondary); flex-shrink:0; }
+.ds-bar-track { flex:1; height:8px; border-radius:var(--radius-pill); background:var(--surface-sunken); overflow:hidden; }
+.ds-bar-fill { height:100%; border-radius:var(--radius-pill); background:var(--viz-1); transition:width var(--dur-base) var(--ease-standard); }
+.ds-bar-row .v { width:28px; text-align:right; color:var(--text-tertiary); font-variant-numeric:tabular-nums; flex-shrink:0; }
+
+/* ---- 범례 (Legend) ------------------------------------- */
+.ds-legend { display:flex; flex-wrap:wrap; gap:12px; font-size:var(--fs-footnote); color:var(--text-secondary); }
+.ds-legend .item { display:inline-flex; align-items:center; gap:6px; }
+.ds-legend .swatch { width:10px; height:10px; border-radius:3px; flex-shrink:0; }
+
+/* ---- 도넛 / 링 (conic-gradient) ------------------------ */
+.ds-donut { width:96px; height:96px; border-radius:50%; display:flex; align-items:center; justify-content:center; position:relative;
+  background:conic-gradient(var(--viz-1) 0 var(--val,60%), var(--surface-sunken) 0); }
+.ds-donut::after { content:""; position:absolute; width:64px; height:64px; border-radius:50%; background:var(--surface); }
+.ds-donut .center { position:relative; z-index:1; font-size:var(--fs-subhead); font-weight:var(--fw-medium); font-variant-numeric:tabular-nums; }
+
+/* ---- Sparkline / 라인 차트 컨테이너 -------------------- */
+.ds-spark { display:block; width:100%; }
+.ds-chart { display:block; width:100%; }
+/* SVG 안에서: 선 stroke=var(--accent), 영역 fill=var(--accent-bg),
+   격자 stroke=var(--border), 끝점 강조 fill=var(--accent). components.md 레시피 참고. */

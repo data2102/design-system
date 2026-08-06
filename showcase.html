@@ -158,6 +158,36 @@
     </div>
   </div>
 
+  <h2>데이터 시각화 (Phase 4)</h2>
+  <div class="ds-card">
+    <div style="display:flex; gap:10px; margin-bottom:16px;">
+      <div class="ds-stat" style="flex:1;">
+        <div class="label">참여 예정 <span class="ds-delta pos">▲ 12%</span></div>
+        <div class="value">47.2<small>억</small></div>
+        <svg class="spark" viewBox="0 0 120 34" preserveAspectRatio="none"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,26 20,22 40,24 60,14 80,17 100,7 118,9"/><circle cx="118" cy="9" r="3" fill="var(--accent)"/></svg>
+      </div>
+      <div class="ds-stat" style="flex:1;">
+        <div class="label">낙찰률 <span class="ds-delta neg">▼ 3%</span></div>
+        <div class="value">68<small>%</small></div>
+        <div style="display:flex; justify-content:center; margin-top:6px;"><div class="ds-donut" style="--val:68%"><span class="center">68%</span></div></div>
+      </div>
+    </div>
+    <div class="ds-bars">
+      <div class="ds-bar-row"><span class="k">용역</span><span class="ds-bar-track"><span class="ds-bar-fill" style="width:60%"></span></span><span class="v">3</span></div>
+      <div class="ds-bar-row"><span class="k">공사</span><span class="ds-bar-track"><span class="ds-bar-fill" style="width:40%; background:var(--viz-2)"></span></span><span class="v">2</span></div>
+    </div>
+    <div class="ds-legend">
+      <span class="item"><span class="swatch" style="background:var(--viz-1)"></span>용역</span>
+      <span class="item"><span class="swatch" style="background:var(--viz-2)"></span>공사</span>
+    </div>
+    <svg class="ds-chart" viewBox="0 0 320 110" style="width:100%; height:110px; margin-top:16px;">
+      <line x1="0" y1="90" x2="320" y2="90" stroke="var(--border)"/>
+      <path d="M0,72 L53,64 L106,76 L160,44 L213,52 L266,30 L320,24 L320,90 L0,90 Z" fill="var(--accent-bg)"/>
+      <polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" points="0,72 53,64 106,76 160,44 213,52 266,30 320,24"/>
+      <circle cx="320" cy="24" r="3.5" fill="var(--accent)"/>
+    </svg>
+  </div>
+
 </div>
 </body>
 </html>

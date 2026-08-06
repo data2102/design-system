@@ -3,7 +3,13 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
-- 다음: Phase 4(데이터 시각화 — KPI 확장·Sparkline·차트 스타일) 또는 실제 도구에 적용
+- 컴포넌트 세트 완성(L3). 다음: 실제 도구(나라장터 모니터 등)에 적용하며 검증·보강
+
+## [1.4.0] — 2026-08-06
+### Added
+- **Phase 4 데이터 시각화** ([`components.css`](components.css)): 확장 KPI(ds-stat), Delta 추세(pos/neg), 가로 막대차트(ds-bars), 범례(ds-legend), 도넛/링(ds-donut), Sparkline·라인/영역 차트 SVG 레시피
+- `showcase.html`에 Phase 4 섹션 추가
+- 최종 통합 쇼케이스 v1.4 (Foundations + Phase 1~4 한 페이지)
 
 ## [1.3.0] — 2026-08-06
 ### Added

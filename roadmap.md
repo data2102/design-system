@@ -49,8 +49,12 @@
 - [x] Avatar · Stepper
 - [x] Popover (Phase 2 잔여분 완료)
 
-### Phase 4 — 데이터 시각화
-- [ ] KPI 카드 확장, Sparkline, 막대/선 차트 스타일, 상태 뱃지 확장
+### Phase 4 — 데이터 시각화 ✅ v1.4.0
+- [x] KPI 카드 확장(ds-stat + delta)
+- [x] Sparkline (SVG 레시피)
+- [x] 가로 막대차트 + 범례
+- [x] 도넛/링 (conic-gradient)
+- [x] 라인/영역 차트 (SVG 레시피)
 
 ## Patterns 층 (컴포넌트 조합)
 - [ ] 폼 검증 흐름 (입력 → 에러 → 성공)

@@ -260,3 +260,68 @@
 <div class="ds-popover">기초금액은 발주기관이 산정한 예정가격이에요.</div>
 ```
 - 위치 지정은 소비 측/JS. 툴팁보다 긴 내용·상호작용 가능할 때.
+
+---
+
+## Phase 4 — 데이터 시각화
+
+색은 `--viz-1~6`(카테고리) + 상태색. 원칙: 색은 의미에 매핑, 무지개 금지, 강조점만 진하게. (foundations.md 참고)
+
+### Stat tile (확장 KPI) + Delta
+
+```html
+<div class="ds-stat">
+  <div class="label">이번 달 참여 예정 <span class="ds-delta pos">▲ 12%</span></div>
+  <div class="value">47.2<small>억</small></div>
+  <svg class="spark" viewBox="0 0 120 36" preserveAspectRatio="none">…</svg>
+</div>
+```
+- `.ds-delta`: `.pos`(좋음·초록) / `.neg`(나쁨·빨강) / `.neutral`. 색은 방향이 아니라 **의미**에 맞춰 선택.
+
+### 가로 막대 차트
+
+```html
+<div class="ds-bars">
+  <div class="ds-bar-row"><span class="k">용역</span><span class="ds-bar-track"><span class="ds-bar-fill" style="width:57%"></span></span><span class="v">3</span></div>
+  <div class="ds-bar-row"><span class="k">공사</span><span class="ds-bar-track"><span class="ds-bar-fill" style="width:38%; background:var(--viz-2)"></span></span><span class="v">2</span></div>
+</div>
+```
+
+### 범례
+
+```html
+<div class="ds-legend">
+  <span class="item"><span class="swatch" style="background:var(--viz-1)"></span>용역</span>
+  <span class="item"><span class="swatch" style="background:var(--viz-2)"></span>공사</span>
+</div>
+```
+
+### 도넛 / 링
+
+```html
+<div class="ds-donut" style="--val:68%"><span class="center">68%</span></div>
+```
+- 단일 비율. 여러 조각이면 `background`에 conic-gradient 여러 stop(`--viz-1` 0 40%, `--viz-2` 40% 70% …).
+
+### Sparkline (SVG 레시피)
+
+```html
+<svg class="ds-spark" viewBox="0 0 120 36" preserveAspectRatio="none" style="height:36px">
+  <polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    points="0,28 20,24 40,26 60,16 80,18 100,8 120,10"/>
+  <circle cx="120" cy="10" r="3" fill="var(--accent)"/>   <!-- 끝점 강조 -->
+</svg>
+```
+
+### 라인 / 영역 차트 (SVG 레시피)
+
+```html
+<svg class="ds-chart" viewBox="0 0 320 120">
+  <line x1="0" y1="100" x2="320" y2="100" stroke="var(--border)"/>      <!-- 바닥 격자 -->
+  <path d="M0,80 L60,70 L120,84 L180,50 L240,58 L320,30 L320,100 L0,100 Z" fill="var(--accent-bg)"/>  <!-- 영역 -->
+  <polyline fill="none" stroke="var(--accent)" stroke-width="2" points="0,80 60,70 120,84 180,50 240,58 320,30"/>
+  <circle cx="320" cy="30" r="3.5" fill="var(--accent)"/>
+</svg>
+```
+- 격자 `--border`(옅게), 선 `--accent`, 영역 `--accent-bg`, 끝점 `--accent` 강조. 축 라벨은 `--text-tertiary` 12px.
+- 여러 계열이면 선마다 `--viz-N` + 범례. **색만으로 구분 금지** — 필요 시 점선/마커 병행.
