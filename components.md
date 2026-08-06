@@ -158,3 +158,105 @@
 </div>
 ```
 - 사과 말고 초대. 제목은 공간을 명명, 본문 한 줄, CTA는 동사. "데이터 없음" 금지.
+
+---
+
+## Phase 3 — 데이터 · 탐색
+
+### Table
+
+```html
+<table class="ds-table hover">
+  <thead><tr><th>공고명</th><th class="num sortable">기초금액 <span class="sort-ind">▾</span></th><th class="num">마감</th></tr></thead>
+  <tbody>
+    <tr><td>도로 유지관리 용역</td><td class="num">4.2억</td><td class="num">D-2</td></tr>
+  </tbody>
+</table>
+```
+- `.hover`(행 hover), `.sticky`(헤더 고정) 옵션. 숫자 열엔 `.num`(우측 정렬+tabular).
+- 정렬 헤더엔 `.sortable` + `.sort-ind`(방향 표시). 정렬 로직은 JS.
+- 열이 많으면 래퍼에 `overflow-x:auto`.
+
+### Tabs
+
+```html
+<div class="ds-tabs" role="tablist">
+  <button class="ds-tab on" role="tab" aria-selected="true">전체</button>
+  <button class="ds-tab" role="tab">진행중</button>
+</div>
+```
+- 밑줄 스타일, 활성 탭만 액센트. `role="tablist"/"tab"`, 패널은 `role="tabpanel"`.
+
+### Pagination
+
+```html
+<div class="ds-pagination">
+  <button class="ds-page-btn" disabled>‹</button>
+  <button class="ds-page-btn on">1</button><button class="ds-page-btn">2</button>
+  <button class="ds-page-btn">›</button>
+</div>
+```
+
+### Breadcrumb
+
+```html
+<nav class="ds-breadcrumb" aria-label="위치">
+  <a href="#">홈</a><span class="sep">/</span><a href="#">입찰</a><span class="sep">/</span><span class="cur">상세</span>
+</nav>
+```
+
+### Nav (사이드바)
+
+```html
+<nav class="ds-nav">
+  <a class="ds-nav-item on"><svg class="ico">…</svg> 대시보드</a>
+  <a class="ds-nav-item"><svg class="ico">…</svg> 공고 목록</a>
+</nav>
+```
+- 활성 항목만 `.on`(연한 액센트 배경). 아이콘+라벨.
+
+### Chip / Filter
+
+```html
+<button class="ds-chip on">전체</button>
+<button class="ds-chip">용역</button>
+```
+- 선택형 필터. 활성만 액센트 배경. (배지 `ds-badge`는 상태 표시용 — 클릭 X, chip은 클릭 O)
+
+### Accordion
+
+```html
+<div class="ds-accordion">
+  <details open><summary>입찰 자격이 어떻게 되나요?</summary><div class="body">…</div></details>
+  <details><summary>마감은 언제인가요?</summary><div class="body">…</div></details>
+</div>
+```
+- 네이티브 `details/summary` 기반 → 키보드·스크린리더 기본 지원. chevron은 열림 시 회전.
+
+### Avatar
+
+```html
+<span class="ds-avatar">소</span>
+<span class="ds-avatar lg"><img src="…" alt="소농민"></span>
+```
+- 이니셜 또는 이미지. 크기 `.sm`(28) / 기본(40) / `.lg`(56).
+
+### Stepper
+
+```html
+<div class="ds-stepper">
+  <div class="ds-step done"><span class="dot">✓</span> 공고 확인</div>
+  <div class="ds-step-line done"></div>
+  <div class="ds-step cur"><span class="dot">2</span> 서류 준비</div>
+  <div class="ds-step-line"></div>
+  <div class="ds-step"><span class="dot">3</span> 제출</div>
+</div>
+```
+- states: `.done`(완료·액센트) / `.cur`(현재) / 기본(예정). 연결선도 `.done`으로 채움.
+
+### Popover
+
+```html
+<div class="ds-popover">기초금액은 발주기관이 산정한 예정가격이에요.</div>
+```
+- 위치 지정은 소비 측/JS. 툴팁보다 긴 내용·상호작용 가능할 때.

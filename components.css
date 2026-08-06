@@ -176,3 +176,97 @@
   .ds-spinner, .ds-skeleton::after, .ds-toast, .ds-overlay, .ds-modal { animation:none !important; }
   .ds-progress .bar { transition:none !important; }
 }
+
+/* ============================================================
+   Phase 3: 데이터 · 탐색
+   ============================================================ */
+
+/* ---- Table --------------------------------------------- */
+.ds-table { width:100%; border-collapse:collapse; font-size:var(--fs-caption); }
+.ds-table thead th { text-align:left; font-size:var(--fs-footnote); font-weight:var(--fw-medium);
+  color:var(--text-tertiary); padding:0 12px 10px; border-bottom:1px solid var(--border); white-space:nowrap; }
+.ds-table th.num, .ds-table td.num { text-align:right; font-variant-numeric:tabular-nums; }
+.ds-table tbody td { padding:14px 12px; border-bottom:1px solid var(--border); color:var(--text-primary); }
+.ds-table tbody tr:last-child td { border-bottom:none; }
+.ds-table.hover tbody tr { transition:background .12s; }
+.ds-table.hover tbody tr:hover { background:var(--surface-sunken); }
+.ds-table th.sortable { cursor:pointer; user-select:none; }
+.ds-table th.sortable:hover { color:var(--text-secondary); }
+.ds-table th .sort-ind { opacity:.5; margin-left:3px; }
+.ds-table.sticky thead th { position:sticky; top:0; background:var(--surface); z-index:1; }
+
+/* ---- Tabs (밑줄 스타일) -------------------------------- */
+.ds-tabs { display:flex; gap:4px; border-bottom:1px solid var(--border); }
+.ds-tab { font-family:inherit; font-size:var(--fs-caption); font-weight:var(--fw-medium); color:var(--text-tertiary);
+  background:none; border:none; padding:10px 14px; cursor:pointer; border-bottom:2px solid transparent;
+  margin-bottom:-1px; transition:color .15s; }
+.ds-tab:hover { color:var(--text-secondary); }
+.ds-tab.on { color:var(--accent); border-bottom-color:var(--accent); }
+.ds-tab:focus-visible { outline:none; box-shadow:var(--shadow-focus); border-radius:6px; }
+
+/* ---- Pagination ---------------------------------------- */
+.ds-pagination { display:flex; gap:4px; align-items:center; }
+.ds-page-btn { font-family:inherit; min-width:36px; height:36px; padding:0 8px; border-radius:10px;
+  border:1px solid transparent; background:none; color:var(--text-secondary); font-size:var(--fs-caption);
+  cursor:pointer; font-variant-numeric:tabular-nums; transition:background .12s; }
+.ds-page-btn:hover { background:var(--surface-sunken); }
+.ds-page-btn.on { background:var(--accent); color:var(--on-accent); }
+.ds-page-btn:disabled { color:var(--text-disabled); cursor:not-allowed; }
+
+/* ---- Breadcrumb ---------------------------------------- */
+.ds-breadcrumb { display:flex; align-items:center; gap:8px; font-size:var(--fs-caption); color:var(--text-tertiary); flex-wrap:wrap; }
+.ds-breadcrumb a { color:var(--text-secondary); text-decoration:none; }
+.ds-breadcrumb a:hover { color:var(--text-primary); }
+.ds-breadcrumb .sep { color:var(--text-disabled); }
+.ds-breadcrumb .cur { color:var(--text-primary); font-weight:var(--fw-medium); }
+
+/* ---- Nav (사이드바) ------------------------------------ */
+.ds-nav { display:flex; flex-direction:column; gap:2px; }
+.ds-nav-item { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:10px;
+  font-size:var(--fs-caption); color:var(--text-secondary); text-decoration:none; cursor:pointer; transition:background .12s, color .12s; }
+.ds-nav-item:hover { background:var(--surface-sunken); color:var(--text-primary); }
+.ds-nav-item.on { background:var(--accent-bg); color:var(--accent); font-weight:var(--fw-medium); }
+.ds-nav-item .ico { width:18px; height:18px; flex-shrink:0; }
+
+/* ---- Chip / Filter ------------------------------------- */
+.ds-chip { font-family:inherit; font-size:var(--fs-caption); font-weight:var(--fw-medium); padding:6px 14px;
+  border-radius:var(--radius-pill); cursor:pointer; background:var(--surface-sunken); color:var(--text-secondary);
+  border:1px solid transparent; transition:.15s; }
+.ds-chip:hover { color:var(--text-primary); }
+.ds-chip.on { background:var(--accent-bg); color:var(--accent); }
+
+/* ---- Accordion (details/summary) ----------------------- */
+.ds-accordion { border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; }
+.ds-accordion details { border-bottom:1px solid var(--border); }
+.ds-accordion details:last-child { border-bottom:none; }
+.ds-accordion summary { list-style:none; cursor:pointer; padding:14px 16px; font-size:var(--fs-caption);
+  font-weight:var(--fw-medium); color:var(--text-primary); display:flex; justify-content:space-between; align-items:center; }
+.ds-accordion summary::-webkit-details-marker { display:none; }
+.ds-accordion summary::after { content:""; width:16px; height:16px; flex-shrink:0; background-color:var(--text-tertiary);
+  -webkit-mask:var(--icon-chevron) center/contain no-repeat; mask:var(--icon-chevron) center/contain no-repeat; transition:transform .2s; }
+.ds-accordion details[open] summary::after { transform:rotate(180deg); }
+.ds-accordion .body { padding:0 16px 14px; font-size:var(--fs-footnote); color:var(--text-secondary); line-height:var(--lh-body); }
+
+/* ---- Avatar -------------------------------------------- */
+.ds-avatar { width:40px; height:40px; border-radius:50%; background:var(--accent-bg); color:var(--accent);
+  display:inline-flex; align-items:center; justify-content:center; font-size:var(--fs-caption); font-weight:var(--fw-medium); overflow:hidden; flex-shrink:0; }
+.ds-avatar img { width:100%; height:100%; object-fit:cover; }
+.ds-avatar.sm { width:28px; height:28px; font-size:var(--fs-footnote); }
+.ds-avatar.lg { width:56px; height:56px; font-size:var(--fs-subhead); }
+
+/* ---- Stepper ------------------------------------------- */
+.ds-stepper { display:flex; align-items:center; }
+.ds-step { display:flex; align-items:center; gap:8px; font-size:var(--fs-caption); color:var(--text-tertiary); }
+.ds-step .dot { width:26px; height:26px; border-radius:50%; border:1.5px solid var(--border-strong);
+  display:flex; align-items:center; justify-content:center; font-size:var(--fs-footnote); font-weight:var(--fw-medium);
+  color:var(--text-tertiary); background:var(--surface); flex-shrink:0; }
+.ds-step.done .dot { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+.ds-step.cur .dot  { border-color:var(--accent); color:var(--accent); }
+.ds-step.cur, .ds-step.done { color:var(--text-primary); }
+.ds-step-line { flex:1; height:1.5px; background:var(--border); margin:0 8px; min-width:20px; }
+.ds-step-line.done { background:var(--accent); }
+
+/* ---- Popover ------------------------------------------- */
+.ds-popover { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+  box-shadow:var(--shadow-popover); padding:12px 14px; font-size:var(--fs-caption); color:var(--text-secondary);
+  max-width:240px; z-index:var(--z-dropdown); }

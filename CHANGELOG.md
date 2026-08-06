@@ -3,7 +3,12 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
-- 다음: Phase 3(Table·Tabs·Pagination·Nav 등 데이터·탐색)
+- 다음: Phase 4(데이터 시각화 — KPI 확장·Sparkline·차트 스타일) 또는 실제 도구에 적용
+
+## [1.3.0] — 2026-08-06
+### Added
+- **Phase 3 데이터·탐색** ([`components.css`](components.css)): Table(정렬·hover·sticky), Tabs, Pagination, Breadcrumb, Nav(사이드바), Chip/Filter, Accordion(details 기반), Avatar, Stepper, Popover
+- `showcase.html`에 Phase 2·3 섹션 추가
 
 ## [1.2.0] — 2026-08-06
 ### Added

@@ -38,15 +38,16 @@
 - [x] EmptyState (빈 화면 = 사과 말고 초대)
 - [ ] Popover — 남음 (Phase 3에서)
 
-### Phase 3 — 데이터 · 탐색
-- [ ] Table (정렬 / 필터 / 페이지네이션 / 고정 헤더)
-- [ ] Tabs
-- [ ] Pagination
-- [ ] Breadcrumb
-- [ ] Sidebar · 상단 Nav
-- [ ] Chip · Filter
-- [ ] Accordion
-- [ ] Avatar · Stepper
+### Phase 3 — 데이터 · 탐색 ✅ v1.3.0
+- [x] Table (정렬 / hover / 고정 헤더)
+- [x] Tabs
+- [x] Pagination
+- [x] Breadcrumb
+- [x] Sidebar · Nav
+- [x] Chip · Filter
+- [x] Accordion
+- [x] Avatar · Stepper
+- [x] Popover (Phase 2 잔여분 완료)
 
 ### Phase 4 — 데이터 시각화
 - [ ] KPI 카드 확장, Sparkline, 막대/선 차트 스타일, 상태 뱃지 확장
