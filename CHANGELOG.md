@@ -3,7 +3,15 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
-- 다음: Foundations 보강(상호작용 상태·모션·아이콘) 또는 Phase 2(피드백·오버레이)
+- 다음: Phase 3(Table·Tabs·Pagination·Nav 등 데이터·탐색)
+
+## [1.2.0] — 2026-08-06
+### Added
+- **Phase 1 마무리**: DatePicker(date input) 스타일
+- **Phase 2 피드백·오버레이** ([`components.css`](components.css)): Banner/Alert(4종), Toast, Modal/Dialog, Tooltip, Spinner, Skeleton, Progress, EmptyState
+- **Foundations 보강** ([`foundations.md`](foundations.md)): 상호작용 상태 규칙, 모션 토큰(`--dur-*`,`--ease-*`), z-index 스케일, 데이터 시각화 팔레트(`--viz-1~6`), 아이콘·접근성·breakpoint 기준
+- `prefers-reduced-motion` 대응
+- 최종 통합 쇼케이스 아트팩트
 
 ## [1.1.0] — 2026-08-06
 ### Added

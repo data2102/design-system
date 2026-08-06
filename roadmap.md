@@ -9,14 +9,14 @@
 - ✅ Components: 버튼, 카드, 메트릭, 배지, 리스트 행 (5개)
 - ❌ 없음: 폼/입력 컴포넌트, 오버레이(모달·토스트), 테이블, 탐색, 모션·아이콘·접근성 규칙, Patterns 층 전체
 
-## Foundations 먼저 보강 (컴포넌트의 토대)
+## Foundations 보강 (컴포넌트의 토대) ✅ v1.2.0 → [`foundations.md`](foundations.md)
 
-- [ ] **상호작용 상태 규칙** — 모든 컴포넌트 공통: default / hover / focus / active / disabled / error / loading. (Material의 state layer 참고)
-- [ ] **모션 토큰** — duration(fast 120ms / base 200ms / slow 320ms), easing(standard/ease-out). `prefers-reduced-motion` 대응.
-- [ ] **아이콘 세트 확정** — 하나의 아웃라인 세트로 통일(예: Tabler / Lucide). 크기·굵기 규칙.
-- [ ] **접근성 기준** — 대비 최소 4.5:1, 포커스 링 필수, 터치 타겟 44px, ARIA 기본.
-- [ ] **breakpoints / z-index / elevation** 스케일 명문화.
-- [ ] **데이터 시각화 팔레트** — 차트용 카테고리 색 + 순차/발산 램프 (Carbon 참고).
+- [x] **상호작용 상태 규칙** — default / hover / focus / active / disabled / error / loading
+- [x] **모션 토큰** — duration(fast/base/slow), easing. `prefers-reduced-motion` 대응
+- [x] **아이콘 세트 규칙** — 아웃라인 한 벌(Tabler/Lucide 권장)
+- [x] **접근성 기준** — 대비 4.5:1, 포커스 링, 터치 44px, ARIA
+- [x] **z-index / breakpoints** 스케일 명문화
+- [x] **데이터 시각화 팔레트** — `--viz-1~6`
 
 ## 컴포넌트 백로그 (우선순위 = 업무 도구에 필요한 순)
 
@@ -29,13 +29,14 @@
 - [ ] DatePicker (또는 date input 스타일) — 남음
 - [x] Form 레이아웃 규칙 (라벨 위치, 필수 표시, 에러 노출)
 
-### Phase 2 — 피드백 · 오버레이
-- [ ] Toast (성공/경고/오류, 자동 사라짐)
-- [ ] Modal · Dialog (포커스 트랩, ESC 닫기)
-- [ ] Tooltip · Popover
-- [ ] Banner · Alert (인라인 상태 메시지)
-- [ ] Loading · Skeleton · Progress
-- [ ] EmptyState (빈 화면 = 사과 말고 초대)
+### Phase 2 — 피드백 · 오버레이 ✅ v1.2.0
+- [x] Toast (성공/경고/오류, 자동 사라짐)
+- [x] Modal · Dialog (ESC 닫기, aria-modal)
+- [x] Tooltip
+- [x] Banner · Alert (인라인 상태 메시지, 4종)
+- [x] Loading · Skeleton · Progress
+- [x] EmptyState (빈 화면 = 사과 말고 초대)
+- [ ] Popover — 남음 (Phase 3에서)
 
 ### Phase 3 — 데이터 · 탐색
 - [ ] Table (정렬 / 필터 / 페이지네이션 / 고정 헤더)

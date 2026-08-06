@@ -77,6 +77,19 @@
   --shadow-popover: 0 8px 24px rgba(0,0,0,0.12);
   --shadow-focus:   0 0 0 3px rgba(49,130,246,0.35);
   --shadow-focus-danger: 0 0 0 3px rgba(240,62,62,0.30);
+
+  /* ===== 모션 (mode 무관) ===== */
+  --dur-fast: 120ms;   --dur-base: 200ms;   --dur-slow: 320ms;
+  --ease-standard: cubic-bezier(.2,0,0,1);   /* 대부분의 전환 */
+  --ease-out:      cubic-bezier(0,0,0,1);    /* 등장(진입) */
+
+  /* ===== z-index 스케일 ===== */
+  --z-dropdown: 1000; --z-sticky: 1100; --z-overlay: 1200;
+  --z-modal:    1300; --z-toast:  1400; --z-tooltip: 1500;
+
+  /* ===== 데이터 시각화 팔레트 (라이트/다크 공통) ===== */
+  --viz-1:#3182f6; --viz-2:#12b886; --viz-3:#f59f00;
+  --viz-4:#c96f4c; --viz-5:#845ef7; --viz-6:#f06595;
 }
 
 /* ============================================================

@@ -104,3 +104,75 @@
   --icon-search:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
   --icon-check:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
 }
+
+/* ---- DatePicker (date input) --------------------------- */
+.ds-input[type="date"] { cursor:pointer; }
+.ds-input[type="date"]::-webkit-calendar-picker-indicator { opacity:.55; cursor:pointer; }
+.ds-input[type="date"]:hover::-webkit-calendar-picker-indicator { opacity:.85; }
+
+/* ============================================================
+   Phase 2: 피드백 · 오버레이
+   ============================================================ */
+
+/* ---- Banner / Alert (인라인 상태 메시지) --------------- */
+.ds-banner { display:flex; gap:10px; align-items:flex-start; padding:12px 14px;
+  border-radius:var(--radius-md); font-size:var(--fs-caption); color:var(--text-primary); line-height:var(--lh-body); }
+.ds-banner .ico { flex-shrink:0; margin-top:1px; width:18px; height:18px; }
+.ds-banner-info    { background:var(--info-bg); }    .ds-banner-info .ico    { color:var(--info); }
+.ds-banner-success { background:var(--success-bg); } .ds-banner-success .ico { color:var(--success); }
+.ds-banner-warning { background:var(--warning-bg); } .ds-banner-warning .ico { color:var(--warning); }
+.ds-banner-danger  { background:var(--danger-bg); }  .ds-banner-danger .ico  { color:var(--danger); }
+
+/* ---- Toast (자동 사라짐 알림, 다크 pill) --------------- */
+.ds-toast-wrap { position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; gap:10px; z-index:var(--z-toast); }
+.ds-toast { display:flex; align-items:center; gap:10px; background:var(--text-primary); color:var(--surface);
+  padding:12px 16px; border-radius:var(--radius-md); box-shadow:var(--shadow-popover); font-size:var(--fs-caption);
+  animation:ds-toast-in var(--dur-base) var(--ease-out); }
+.ds-toast .dot { width:8px; height:8px; border-radius:50%; background:var(--success); flex-shrink:0; }
+.ds-toast.is-danger .dot { background:var(--danger); }
+.ds-toast.is-warning .dot { background:var(--warning); }
+
+/* ---- Modal / Dialog ------------------------------------ */
+.ds-overlay { position:fixed; inset:0; background:rgba(0,0,0,.45); display:flex; align-items:center;
+  justify-content:center; padding:20px; z-index:var(--z-modal); animation:ds-fade var(--dur-base) var(--ease-out); }
+.ds-modal { background:var(--surface); border-radius:var(--radius-xl); box-shadow:var(--shadow-popover);
+  max-width:420px; width:100%; padding:24px; animation:ds-pop var(--dur-base) var(--ease-out); }
+.ds-modal h3 { font-size:var(--fs-heading); font-weight:var(--fw-medium); margin:0 0 8px; color:var(--text-primary); }
+.ds-modal p  { font-size:var(--fs-caption); color:var(--text-secondary); margin:0 0 20px; line-height:var(--lh-body); }
+.ds-modal-actions { display:flex; gap:10px; justify-content:flex-end; }
+
+/* ---- Tooltip (data-tip 속성) --------------------------- */
+.ds-tip { position:relative; }
+.ds-tip::after { content:attr(data-tip); position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%);
+  background:var(--text-primary); color:var(--surface); font-size:var(--fs-footnote); white-space:nowrap;
+  padding:6px 10px; border-radius:var(--radius-sm); opacity:0; pointer-events:none;
+  transition:opacity var(--dur-fast); z-index:var(--z-tooltip); }
+.ds-tip:hover::after, .ds-tip:focus-visible::after { opacity:1; }
+
+/* ---- Loading: spinner / skeleton / progress ------------ */
+.ds-spinner { width:20px; height:20px; border:2.5px solid var(--border-strong); border-top-color:var(--accent);
+  border-radius:50%; animation:ds-spin .7s linear infinite; }
+.ds-skeleton { background:var(--surface-sunken); border-radius:var(--radius-sm); position:relative; overflow:hidden; }
+.ds-skeleton::after { content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, transparent, rgba(128,128,128,.15), transparent); animation:ds-shimmer 1.3s infinite; }
+.ds-progress { height:8px; background:var(--surface-sunken); border-radius:var(--radius-pill); overflow:hidden; }
+.ds-progress .bar { height:100%; background:var(--accent); border-radius:var(--radius-pill); transition:width var(--dur-base) var(--ease-standard); }
+
+/* ---- EmptyState (빈 화면 = 초대) ----------------------- */
+.ds-empty { text-align:center; padding:40px 20px; }
+.ds-empty .ico { color:var(--text-tertiary); width:36px; height:36px; margin:0 auto; }
+.ds-empty h3 { font-size:var(--fs-subhead); font-weight:var(--fw-medium); margin:14px 0 4px; color:var(--text-primary); }
+.ds-empty p  { font-size:var(--fs-caption); color:var(--text-secondary); margin:0 auto 16px; max-width:280px; }
+
+/* ---- 키프레임 ------------------------------------------ */
+@keyframes ds-toast-in { from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:translateY(0); } }
+@keyframes ds-fade { from{ opacity:0; } to{ opacity:1; } }
+@keyframes ds-pop  { from{ opacity:0; transform:scale(.96); } to{ opacity:1; transform:scale(1); } }
+@keyframes ds-spin { to{ transform:rotate(360deg); } }
+@keyframes ds-shimmer { to{ transform:translateX(100%); } }
+
+@media (prefers-reduced-motion:reduce) {
+  .ds-spinner, .ds-skeleton::after, .ds-toast, .ds-overlay, .ds-modal { animation:none !important; }
+  .ds-progress .bar { transition:none !important; }
+}

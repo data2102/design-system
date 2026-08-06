@@ -76,6 +76,85 @@
 - 에러: 무엇을 어떻게. "기관명을 입력해 주세요." — "필수 항목입니다"보다 구체적으로.
 - 도움말: 왜/어떻게만 짧게. 당연한 말 반복 금지.
 
+### DatePicker (날짜 입력)
+
+```html
+<input class="ds-input" type="date">
+```
+- 네이티브 date input을 그대로 쓰되 `.ds-input` 스타일 적용(높이·테두리·포커스 통일). 달력 아이콘만 톤 조정.
+
 ### 다크 모드
 
 모든 폼 요소는 토큰을 쓰므로, 상위에 `.theme-dark`만 붙이면 그대로 다크로 전환된다.
+
+---
+
+## Phase 2 — 피드백 · 오버레이
+
+### Banner / Alert (인라인 상태 메시지)
+
+```html
+<div class="ds-banner ds-banner-warning">
+  <svg class="ico">…경고 아이콘…</svg>
+  <div>마감이 2일 남았어요. 서류를 확인하세요.</div>
+</div>
+```
+- variants: `-info` `-success` `-warning` `-danger`. 배경은 은은한 틴트, 본문은 기본색, 아이콘만 역할색.
+- 페이지에 붙박이로 뜨는 상태 안내에. (일시적 알림은 Toast)
+
+### Toast (자동 사라짐 알림)
+
+```html
+<div class="ds-toast-wrap">
+  <div class="ds-toast"><span class="dot"></span>저장했어요</div>
+</div>
+```
+- 어두운 pill(역전색), 화면 하단 중앙. variants: 기본(성공) / `.is-warning` / `.is-danger`.
+- **접근성**: 컨테이너에 `role="status" aria-live="polite"`. 3~4초 후 JS로 제거.
+- 작업 결과 피드백에("저장했어요", "등록했어요"). 되돌리기 버튼을 함께 두면 좋음.
+
+### Modal / Dialog
+
+```html
+<div class="ds-overlay">
+  <div class="ds-modal" role="dialog" aria-modal="true" aria-labelledby="m-t">
+    <h3 id="m-t">이 공고를 삭제할까요?</h3>
+    <p>삭제하면 되돌릴 수 없어요.</p>
+    <div class="ds-modal-actions">
+      <button class="ds-btn ds-btn-secondary">취소</button>
+      <button class="ds-btn ds-btn-primary">삭제하기</button>
+    </div>
+  </div>
+</div>
+```
+- **접근성**: `role="dialog" aria-modal`, ESC 닫기, 포커스 트랩, 닫으면 열기 전 요소로 포커스 복귀.
+- 중요한 확인/검토에만. 남발하면 흐름을 끊음.
+
+### Tooltip
+
+```html
+<button class="ds-tip" data-tip="나라장터 기준 D-day">마감 ⓘ</button>
+```
+- hover·focus 시 위쪽에 표시. 짧은 보조 설명만(중요 정보는 툴팁에 숨기지 말 것).
+
+### Loading — spinner / skeleton / progress
+
+```html
+<span class="ds-spinner"></span>
+<div class="ds-skeleton" style="height:16px; width:70%"></div>
+<div class="ds-progress"><div class="bar" style="width:60%"></div></div>
+```
+- 짧은 대기 = spinner, 콘텐츠 로딩 = skeleton(레이아웃 유지), 진행률 = progress.
+- 모두 `prefers-reduced-motion`에서 멈춤.
+
+### EmptyState (빈 화면)
+
+```html
+<div class="ds-empty">
+  <svg class="ico">…</svg>
+  <h3>아직 등록한 공고가 없어요</h3>
+  <p>관심 있는 공고를 등록하면 마감 전에 알려드릴게요.</p>
+  <button class="ds-btn ds-btn-primary">공고 등록하기</button>
+</div>
+```
+- 사과 말고 초대. 제목은 공간을 명명, 본문 한 줄, CTA는 동사. "데이터 없음" 금지.
