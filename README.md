@@ -13,6 +13,9 @@
 | [`tokens.css`](tokens.css) | 웹/HTML용 CSS 변수 |
 | [`tokens.py`](tokens.py) | Python(GUI·HTML 생성)용 상수 |
 | [`showcase.html`](showcase.html) | 컴포넌트 미리보기 (더블클릭해서 열기) |
+| [`references.md`](references.md) | 참고 디자인 시스템 + 훔칠 것 |
+| [`roadmap.md`](roadmap.md) | 발전 로드맵 (L2→L3) + 컴포넌트 백로그 |
+| [`CHANGELOG.md`](CHANGELOG.md) | 버전 변경 기록 |
 
 ## 쓰는 법
 
