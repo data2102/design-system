@@ -16,7 +16,7 @@ tokens.css 와 값이 1:1로 같습니다. 한쪽만 고치지 말 것.
 
 # ── 폰트 ─────────────────────────────────────────────
 FONT = {
-    "sans": "Pretendard",          # 없으면 아래 폴백
+    "sans": "Noto Sans KR",        # 기본 (부드럽고 인간적). 없으면 아래 폴백
     "sans_fallback": "Malgun Gothic",   # 맑은 고딕 (Windows 기본 한글)
     "mono": "Consolas",            # 숫자/모노 (D2Coding 있으면 그걸로)
 }

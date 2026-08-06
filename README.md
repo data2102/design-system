@@ -34,14 +34,15 @@ T = DARK if 모니터링화면 else LIGHT
 
 ## 어디서든 불러쓰기 (raw URL)
 
-GitHub에 올리면 아래 주소로 어느 환경에서든 바로 가져올 수 있다.
-(`<USER>`는 본인 GitHub 아이디로 교체)
+GitHub에 올려서 아래 주소로 어느 환경에서든 바로 가져올 수 있다.
 
 ```
-https://raw.githubusercontent.com/<USER>/design-system/main/tokens.css
-https://raw.githubusercontent.com/<USER>/design-system/main/tokens.py
-https://raw.githubusercontent.com/<USER>/design-system/main/design-system.md
+https://raw.githubusercontent.com/data2102/design-system/main/tokens.css
+https://raw.githubusercontent.com/data2102/design-system/main/tokens.py
+https://raw.githubusercontent.com/data2102/design-system/main/design-system.md
 ```
+
+저장소: https://github.com/data2102/design-system
 
 ## 원칙 5줄 요약
 

@@ -52,7 +52,7 @@
 
 ## 4. 타이포그래피
 
-- **폰트**: `Pretendard`(한글 최적, 무료). 폴백은 `Malgun Gothic`(맑은 고딕). 숫자 강조/다크 대시보드는 모노(`Consolas`·`D2Coding`).
+- **폰트**: `Noto Sans KR`(부드럽고 인간적, 무료). 폴백은 `Pretendard` → `Malgun Gothic`(맑은 고딕). 숫자 강조/다크 대시보드는 모노(`Consolas`·`D2Coding`).
 - **크기**: display 30 · title 22 · heading 18 · subhead 16 · body 15 · caption 13 · footnote 12.
 - **굵기**: 400(본문) / 500(기본 강조) / 700(아껴서). **600은 쓰지 않는다** — 2~3단계로 충분.
 - **큰 숫자**: `line-height 1.3`, `letter-spacing -0.4px`. 한글·큰 숫자는 살짝 좁혀야 예쁘다.
