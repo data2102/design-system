@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>여백 디자인 시스템 — 쇼케이스</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  body { margin: 0; background: var(--bg); color: var(--text-primary);
+         font-family: var(--font-sans); line-height: var(--lh-body); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: var(--sp-8) var(--sp-5); }
+  h1 { font-size: var(--fs-title); font-weight: var(--fw-medium); margin: 0 0 4px; }
+  .sub { color: var(--text-tertiary); font-size: var(--fs-caption); margin-bottom: var(--sp-8); }
+  h2 { font-size: var(--fs-heading); font-weight: var(--fw-medium); margin: var(--sp-8) 0 var(--sp-3); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+  .metric-label { color: var(--text-tertiary); font-size: var(--fs-caption); margin-bottom: 6px; }
+  .row { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-3) 0; border-top: 1px solid var(--border); }
+  .chip { width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--accent-bg);
+          color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: var(--fw-bold); }
+  .row .t { flex: 1; font-weight: var(--fw-medium); font-size: var(--fs-body); }
+  .row .m { color: var(--text-tertiary); font-size: var(--fs-caption); }
+  .swatch { height: 44px; border-radius: var(--radius-sm); border: 1px solid var(--border);
+            display: flex; align-items: flex-end; padding: 6px 8px; font-size: 11px; color: #fff; }
+  .swrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-2); margin-bottom: var(--sp-2); }
+</style>
+</head>
+<body>
+<div class="wrap" id="root">
+
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <h1>여백 디자인 시스템</h1>
+      <div class="sub">토스류 미니멀(기본) · 다크(모니터링 옵션)</div>
+    </div>
+    <button class="ds-btn ds-btn-secondary" onclick="document.getElementById('root').classList.toggle('theme-dark')">
+      테마 전환
+    </button>
+  </div>
+
+  <h2>색</h2>
+  <div class="swrow">
+    <div class="swatch" style="background:var(--accent)">accent</div>
+    <div class="swatch" style="background:var(--success)">success</div>
+    <div class="swatch" style="background:var(--warning)">warning</div>
+    <div class="swatch" style="background:var(--danger)">danger</div>
+  </div>
+  <div class="swrow">
+    <div class="swatch" style="background:var(--text-primary)">text-primary</div>
+    <div class="swatch" style="background:var(--text-secondary)">text-secondary</div>
+    <div class="swatch" style="background:var(--text-tertiary)">text-tertiary</div>
+    <div class="swatch" style="background:var(--warm)">warm</div>
+  </div>
+
+  <h2>메트릭 카드</h2>
+  <div class="grid">
+    <div class="ds-card">
+      <div class="metric-label">오늘 신규</div>
+      <div class="ds-hero ds-num">14</div>
+    </div>
+    <div class="ds-card">
+      <div class="metric-label">마감 임박</div>
+      <div class="ds-hero ds-num" style="color:var(--danger)">3</div>
+    </div>
+  </div>
+
+  <h2>리스트 · 배지 · 버튼</h2>
+  <div class="ds-card">
+    <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:4px;">
+      <span style="font-size:var(--fs-heading); font-weight:var(--fw-medium)">이번 주 입찰</span>
+      <span class="ds-badge ds-badge-success">진행중</span>
+    </div>
+    <div style="color:var(--accent); font-size:var(--fs-caption); margin-bottom:8px;">지난주보다 12% 늘었어요</div>
+
+    <div class="row"><span class="chip">도</span><span class="t">도로 유지관리 용역</span><span class="m">D-2</span></div>
+    <div class="row"><span class="chip">정</span><span class="t">정보시스템 구축</span><span class="m">D-5</span></div>
+
+    <div style="display:flex; gap:var(--sp-2); margin-top:var(--sp-4);">
+      <button class="ds-btn ds-btn-primary" style="flex:1;">입찰 준비하기</button>
+      <button class="ds-btn ds-btn-secondary">나중에</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
