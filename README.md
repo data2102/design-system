@@ -5,6 +5,38 @@
 
 베이스는 **토스류 미니멀**(밝은 화면), 모니터링·자동화 도구에는 **다크 옵션**을 쓴다.
 
+**🌐 라이브 미리보기 (공유용 링크)**
+- 디자인 시스템 소개 → https://data2102.github.io/design-system/
+- 작업물 적용 예시 → https://data2102.github.io/design-system/examples.html
+
+---
+
+## 🗣️ Claude에게 요청하는 법
+
+다른 작업물에 이 디자인 시스템을 입히고 싶을 때, 이렇게 요청하면 된다.
+
+**① 가장 간단 (보통 이거면 됨)**
+> 여백 디자인 시스템으로 ○○ 만들어줘
+
+**② 확실하게 (새 세션·중요한 작업 — 복붙용)**
+```
+내 디자인 시스템(github.com/data2102/design-system)을 적용해서 ○○을 만들어줘.
+- tokens.css / components.css / foundations.md 기준으로
+- 라이트 기본 (모니터링·자동화 화면이면 다크로)
+```
+
+**③ 실제 코드 파일에 입힐 때**
+> github.com/data2102/design-system 의 tokens.css·components.css를 적용해서 ○○.html(또는 .py)을 우리 디자인으로 바꿔줘
+
+**요청할 때 같이 주면 좋은 것**
+- 무엇을: 작업물 이름 / 파일 경로(있으면 첨부)
+- 테마: 라이트(기본) vs 다크(모니터링·자동화)
+- 형태: ⓐ 실제 도구에 적용(코드에 CSS 연결) / ⓑ 공유용 독립 HTML 한 장(폰트 내장)
+
+> 💡 핵심: **"여백 디자인 시스템으로"** 면 대부분 되고, 확실히 하려면 **이 repo 링크를 같이** 주면 Claude가 실제 최신 파일을 읽어서 정확히 적용한다.
+
+---
+
 ## 구성
 
 | 파일 | 역할 |
@@ -45,8 +77,10 @@ GitHub에 올려서 아래 주소로 어느 환경에서든 바로 가져올 수
 
 ```
 https://raw.githubusercontent.com/data2102/design-system/main/tokens.css
+https://raw.githubusercontent.com/data2102/design-system/main/components.css
 https://raw.githubusercontent.com/data2102/design-system/main/tokens.py
-https://raw.githubusercontent.com/data2102/design-system/main/design-system.md
+https://raw.githubusercontent.com/data2102/design-system/main/foundations.md
+https://raw.githubusercontent.com/data2102/design-system/main/components.md
 ```
 
 저장소: https://github.com/data2102/design-system
@@ -65,4 +99,5 @@ https://raw.githubusercontent.com/data2102/design-system/main/design-system.md
 
 ## 버전
 
-- **v1.0** (2026-08) — 초기 토큰(라이트/다크) + 기본 컴포넌트(버튼·카드·메트릭·배지·리스트)
+- **v1.4** (2026-08) — Foundations + Phase 1~4 전체(폼·피드백·오버레이·데이터탐색·시각화). 컴포넌트 세트 완성(L3)
+- 상세 이력은 [`CHANGELOG.md`](CHANGELOG.md)
