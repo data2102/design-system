@@ -12,6 +12,8 @@
 | [`design-system.md`](design-system.md) | 원칙 + 토큰 + 컴포넌트 규칙 (기준서) |
 | [`tokens.css`](tokens.css) | 웹/HTML용 CSS 변수 |
 | [`tokens.py`](tokens.py) | Python(GUI·HTML 생성)용 상수 |
+| [`components.css`](components.css) | 컴포넌트 (폼·입력 등). tokens.css 다음에 로드 |
+| [`components.md`](components.md) | 컴포넌트 사용법 문서 |
 | [`showcase.html`](showcase.html) | 컴포넌트 미리보기 (더블클릭해서 열기) |
 | [`references.md`](references.md) | 참고 디자인 시스템 + 훔칠 것 |
 | [`roadmap.md`](roadmap.md) | 발전 로드맵 (L2→L3) + 컴포넌트 백로그 |
@@ -22,6 +24,7 @@
 **HTML / 웹 리포트**
 ```html
 <link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">  <!-- 폼 등 컴포넌트 쓸 때 -->
 <div class="ds-page"><div class="ds-card">…</div></div>
 <!-- 모니터링 화면이면 상위 요소에 class="theme-dark" -->
 ```

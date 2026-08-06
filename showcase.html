@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>여백 디자인 시스템 — 쇼케이스</title>
 <link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
 <style>
   body { margin: 0; background: var(--bg); color: var(--text-primary);
          font-family: var(--font-sans); line-height: var(--lh-body); }
@@ -77,6 +78,43 @@
     <div style="display:flex; gap:var(--sp-2); margin-top:var(--sp-4);">
       <button class="ds-btn ds-btn-primary" style="flex:1;">입찰 준비하기</button>
       <button class="ds-btn ds-btn-secondary">나중에</button>
+    </div>
+  </div>
+
+  <h2>폼 · 입력 (Phase 1)</h2>
+  <div class="ds-card">
+    <div class="ds-field">
+      <label class="ds-label" for="s-title">공고명<span class="ds-req">*</span></label>
+      <input class="ds-input" id="s-title" type="text" placeholder="도로 유지관리 용역">
+      <span class="ds-help">나라장터 표기 그대로 입력하세요.</span>
+    </div>
+    <div style="display:flex; gap:12px;">
+      <div class="ds-field" style="flex:1;">
+        <label class="ds-label" for="s-org">발주기관</label>
+        <div class="ds-select"><select id="s-org"><option>조달청</option><option>한국도로공사</option><option>LH</option></select></div>
+      </div>
+      <div class="ds-field" style="flex:1;">
+        <label class="ds-label" for="s-q">검색</label>
+        <div class="ds-search"><input class="ds-input" id="s-q" type="search" placeholder="공고 검색"></div>
+      </div>
+    </div>
+    <div class="ds-field is-error">
+      <label class="ds-label" for="s-mail">이메일 (에러 예시)</label>
+      <input class="ds-input" id="s-mail" type="email" value="담당자@">
+      <span class="ds-error">올바른 이메일 형식이 아니에요.</span>
+    </div>
+    <div class="ds-field">
+      <label class="ds-label" for="s-dis">비활성 예시</label>
+      <input class="ds-input" id="s-dis" type="text" value="자동 연동됨" disabled>
+    </div>
+    <div style="display:flex; gap:18px; margin-bottom:16px;">
+      <label class="ds-radio"><input type="radio" name="s-cat" checked><span class="box"></span> 용역</label>
+      <label class="ds-radio"><input type="radio" name="s-cat"><span class="box"></span> 공사</label>
+      <label class="ds-radio"><input type="radio" name="s-cat"><span class="box"></span> 물품</label>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <label class="ds-switch"><input type="checkbox" checked><span class="track"></span> 마감 임박 시 알림</label>
+      <label class="ds-check"><input type="checkbox"><span class="box"></span> 유사 공고도 추천받기</label>
     </div>
   </div>
 

@@ -20,14 +20,14 @@
 
 ## 컴포넌트 백로그 (우선순위 = 업무 도구에 필요한 순)
 
-### Phase 1 — 폼 · 입력 (업무 자동화 도구의 핵심)
-- [ ] TextInput (label / help / error / prefix·suffix)
-- [ ] Textarea
-- [ ] Select · Dropdown
-- [ ] Checkbox · Radio · Switch(토글)
-- [ ] Search 입력
-- [ ] DatePicker (또는 date input 스타일)
-- [ ] Form 레이아웃 규칙 (라벨 위치, 필수 표시, 에러 노출)
+### Phase 1 — 폼 · 입력 (업무 자동화 도구의 핵심) ✅ v1.1.0
+- [x] TextInput (label / help / error)
+- [x] Textarea
+- [x] Select · Dropdown
+- [x] Checkbox · Radio · Switch(토글)
+- [x] Search 입력
+- [ ] DatePicker (또는 date input 스타일) — 남음
+- [x] Form 레이아웃 규칙 (라벨 위치, 필수 표시, 에러 노출)
 
 ### Phase 2 — 피드백 · 오버레이
 - [ ] Toast (성공/경고/오류, 자동 사라짐)

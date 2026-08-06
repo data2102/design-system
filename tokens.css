@@ -76,6 +76,7 @@
   --shadow-card:    0 1px 3px rgba(0,0,0,0.06);
   --shadow-popover: 0 8px 24px rgba(0,0,0,0.12);
   --shadow-focus:   0 0 0 3px rgba(49,130,246,0.35);
+  --shadow-focus-danger: 0 0 0 3px rgba(240,62,62,0.30);
 }
 
 /* ============================================================
@@ -110,6 +111,7 @@
   --shadow-card:    0 1px 3px rgba(0,0,0,0.4);
   --shadow-popover: 0 8px 24px rgba(0,0,0,0.5);
   --shadow-focus:   0 0 0 3px rgba(34,211,238,0.35);
+  --shadow-focus-danger: 0 0 0 3px rgba(248,113,113,0.30);
 }
 
 /* ============================================================

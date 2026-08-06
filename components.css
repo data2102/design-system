@@ -1,0 +1,106 @@
+/* ============================================================
+   여백(Yeobaek) Design System — components.css
+   tokens.css 를 먼저 로드해야 함 (var(--*) 참조).
+   Phase 1: 폼 · 입력 컴포넌트
+   모든 색·간격은 토큰 경유 → 라이트/다크(.theme-dark) 자동 대응.
+   ============================================================ */
+
+/* ---- 폼 레이아웃 ---------------------------------------- */
+.ds-field { display:flex; flex-direction:column; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+.ds-label { font-size:var(--fs-caption); font-weight:var(--fw-medium); color:var(--text-secondary); }
+.ds-req   { color:var(--danger); margin-left:2px; }          /* 필수 표시 * */
+.ds-help  { font-size:var(--fs-footnote); color:var(--text-tertiary); }
+.ds-error { font-size:var(--fs-footnote); color:var(--danger); display:none; }
+.ds-field.is-error .ds-error { display:block; }
+.ds-field.is-error .ds-help  { display:none; }
+
+/* ---- 텍스트 입력 / textarea ---------------------------- */
+.ds-input, .ds-textarea, .ds-select select {
+  width:100%; font-family:var(--font-sans); font-size:var(--fs-body); color:var(--text-primary);
+  background:var(--surface); border:1px solid var(--border-strong); border-radius:var(--radius-md);
+  transition:border-color .15s, box-shadow .15s, background .15s;
+  -webkit-appearance:none; appearance:none;
+}
+.ds-input   { height:48px; padding:0 var(--sp-4); }
+.ds-textarea{ min-height:104px; padding:var(--sp-3) var(--sp-4); line-height:var(--lh-body); resize:vertical; }
+.ds-input::placeholder, .ds-textarea::placeholder { color:var(--text-tertiary); }
+
+.ds-input:hover, .ds-textarea:hover, .ds-select select:hover { border-color:var(--text-tertiary); }
+.ds-input:focus, .ds-textarea:focus, .ds-select select:focus {
+  outline:none; border-color:var(--accent); box-shadow:var(--shadow-focus);
+}
+.ds-input:disabled, .ds-textarea:disabled, .ds-select select:disabled {
+  background:var(--surface-sunken); color:var(--text-disabled); cursor:not-allowed; border-color:var(--border);
+}
+/* 에러 상태 (필드에 .is-error) */
+.ds-field.is-error .ds-input,
+.ds-field.is-error .ds-textarea,
+.ds-field.is-error .ds-select select { border-color:var(--danger); }
+.ds-field.is-error .ds-input:focus,
+.ds-field.is-error .ds-textarea:focus,
+.ds-field.is-error .ds-select select:focus { box-shadow:var(--shadow-focus-danger); }
+
+/* ---- Select (chevron) ---------------------------------- */
+.ds-select { position:relative; display:block; }
+.ds-select select { padding-right:40px; cursor:pointer; }
+.ds-select::after {
+  content:""; position:absolute; right:14px; top:50%; width:16px; height:16px; transform:translateY(-50%);
+  pointer-events:none; background-color:var(--text-tertiary);
+  -webkit-mask:var(--icon-chevron) center/contain no-repeat; mask:var(--icon-chevron) center/contain no-repeat;
+}
+
+/* ---- Search (leading icon) ----------------------------- */
+.ds-search { position:relative; display:block; }
+.ds-search .ds-input { padding-left:42px; }
+.ds-search::before {
+  content:""; position:absolute; left:14px; top:50%; width:18px; height:18px; transform:translateY(-50%);
+  pointer-events:none; background-color:var(--text-tertiary);
+  -webkit-mask:var(--icon-search) center/contain no-repeat; mask:var(--icon-search) center/contain no-repeat;
+}
+
+/* ---- Checkbox / Radio ---------------------------------- */
+.ds-check, .ds-radio { display:inline-flex; align-items:center; gap:var(--sp-2); cursor:pointer;
+  font-size:var(--fs-body); color:var(--text-primary); user-select:none; }
+.ds-check input, .ds-radio input { position:absolute; opacity:0; width:1px; height:1px; }
+.ds-check .box, .ds-radio .box {
+  flex-shrink:0; width:20px; height:20px; border:1.5px solid var(--border-strong);
+  background:var(--surface); transition:background .15s, border-color .15s; position:relative;
+}
+.ds-check .box { border-radius:6px; }
+.ds-radio .box { border-radius:50%; }
+.ds-check input:hover + .box, .ds-radio input:hover + .box { border-color:var(--text-tertiary); }
+.ds-check input:checked + .box, .ds-radio input:checked + .box { background:var(--accent); border-color:var(--accent); }
+.ds-check input:checked + .box::after {
+  content:""; position:absolute; inset:0; background-color:var(--on-accent);
+  -webkit-mask:var(--icon-check) center/12px no-repeat; mask:var(--icon-check) center/12px no-repeat;
+}
+.ds-radio input:checked + .box::after {
+  content:""; position:absolute; inset:5px; border-radius:50%; background:var(--on-accent);
+}
+.ds-check input:focus-visible + .box, .ds-radio input:focus-visible + .box { box-shadow:var(--shadow-focus); }
+.ds-check input:disabled + .box, .ds-radio input:disabled + .box { background:var(--surface-sunken); border-color:var(--border); }
+.ds-check:has(input:disabled), .ds-radio:has(input:disabled) { color:var(--text-disabled); cursor:not-allowed; }
+
+/* ---- Switch (토글) ------------------------------------- */
+.ds-switch { display:inline-flex; align-items:center; gap:var(--sp-3); cursor:pointer;
+  font-size:var(--fs-body); color:var(--text-primary); user-select:none; }
+.ds-switch input { position:absolute; opacity:0; width:1px; height:1px; }
+.ds-switch .track {
+  flex-shrink:0; width:44px; height:26px; border-radius:var(--radius-pill); background:var(--border-strong);
+  position:relative; transition:background .18s;
+}
+.ds-switch .track::after {
+  content:""; position:absolute; top:3px; left:3px; width:20px; height:20px; border-radius:50%;
+  background:var(--surface); box-shadow:0 1px 2px rgba(0,0,0,.25); transition:transform .18s;
+}
+.ds-switch input:checked + .track { background:var(--accent); }
+.ds-switch input:checked + .track::after { transform:translateX(18px); }
+.ds-switch input:focus-visible + .track { box-shadow:var(--shadow-focus); }
+.ds-switch input:disabled + .track { background:var(--border); }
+
+/* ---- 아이콘 정의 (mask용, 색은 background-color가 결정) --- */
+:root {
+  --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  --icon-search:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  --icon-check:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}

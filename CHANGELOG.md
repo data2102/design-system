@@ -3,8 +3,16 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
+- 다음: Foundations 보강(상호작용 상태·모션·아이콘) 또는 Phase 2(피드백·오버레이)
+
+## [1.1.0] — 2026-08-06
+### Added
+- **Phase 1 폼·입력 컴포넌트** ([`components.css`](components.css), [`components.md`](components.md)):
+  TextInput, Textarea, Select, Search, Checkbox, Radio, Switch + 폼 레이아웃(라벨/도움말/에러)
+- 상호작용 상태 규칙: hover / focus / disabled / error 를 모든 폼 요소에 적용
+- 토큰 추가: `--shadow-focus-danger` (에러 포커스 링)
+- `showcase.html`에 폼 섹션 추가
 - 레퍼런스 라이브러리([`references.md`](references.md))·발전 로드맵([`roadmap.md`](roadmap.md)) 추가
-- 다음: Phase 1(폼·입력 컴포넌트) 착수 예정
 
 ## [1.0.1] — 2026-08-06
 ### Changed
