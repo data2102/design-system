@@ -47,6 +47,9 @@ def build_data():
             {"k": "분류 2", "pct": 35, "v": "8.4", "color": "var(--viz-2)"},
             {"k": "분류 3", "pct": 26, "v": "6.2", "color": "var(--viz-3)"},
         ],
+        "trend": {"labels": ["1월", "2월", "3월", "4월", "5월", "6월", "7월"],
+                  "values": [3.2, 3.5, 3.1, 4.0, 3.8, 4.5, 4.8]},
+        "donut": [{"label": "A", "value": 44}, {"label": "B", "value": 30}, {"label": "C", "value": 26}],
     }
     # ▲▲▲ 여기까지 교체 ▲▲▲
 
@@ -73,9 +76,15 @@ PAGE = r"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
       <tbody id="rows"></tbody>
     </table>
   </div>
-  <div class="yb-h2">분포 <span class="hint">미니 막대</span></div>
-  <div class="yb-panel"><div class="yb-bars" id="bars"></div></div>
+  <div class="yb-h2">추이 <span class="hint">차트 헬퍼 YB.line (hover 툴팁)</span></div>
+  <div class="yb-panel" style="margin-bottom:14px"><div id="chart"></div></div>
+  <div class="yb-h2">분포 <span class="hint">YB.donut + 미니 막대</span></div>
+  <div class="yb-panel" style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+    <div id="donut"></div>
+    <div class="yb-bars" id="bars" style="flex:1;min-width:220px"></div>
+  </div>
 </div>
+/*__CHARTS__*/
 <script>
 const D = /*__DATA__*/;
 const $ = s => document.querySelector(s);
@@ -84,6 +93,8 @@ $("#alerts").innerHTML = D.alerts.map(a=>`<div class="yb-alert yb-alert-${a.leve
 $("#kpis").innerHTML = D.kpis.map(k=>`<div class="yb-kpi"><div class="lab">${k.lab} <span class="yb-delta ${k.dir}">${k.delta}</span></div><div class="val">${k.val} <small>${k.unit}</small></div></div>`).join("");
 $("#rows").innerHTML = D.rows.map(r=>`<tr><td>${r.name}</td><td class="num">${r.cur}</td><td class="num ${r.up?'up':'down'}">${r.dod}</td><td class="num">${r.mtd}</td></tr>`).join("");
 $("#bars").innerHTML = D.bars.map(b=>`<div class="yb-bar"><span class="k">${b.k}</span><span class="track"><span class="fill" style="width:${b.pct}%;background:${b.color}"></span></span><span class="v">${b.v}</span></div>`).join("");
+YB.line("#chart", {labels:D.trend.labels, series:[{name:"실적", values:D.trend.values}], area:true, yFmt:v=>v.toFixed(1)+"억"});
+YB.donut("#donut", D.donut);
 $("#theme").addEventListener("click",()=>{const r=document.documentElement;r.setAttribute("data-theme", r.getAttribute("data-theme")==="dark"?"light":"dark");});
 $("#exp").addEventListener("click",()=>{const h="<!doctype html>\n"+document.documentElement.outerHTML;const b=new Blob([h],{type:"text/html;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=D.title+".html";a.click();});
 </script>
@@ -94,6 +105,7 @@ def render():
     data = build_data()
     return (PAGE
             .replace("/*__STYLE__*/", yeobaek.style_tag())
+            .replace("/*__CHARTS__*/", yeobaek.script_tag())
             .replace("__TITLE__", data["title"])
             .replace("/*__DATA__*/", json.dumps(data, ensure_ascii=False)))
 

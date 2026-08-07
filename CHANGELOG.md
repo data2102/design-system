@@ -3,7 +3,13 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
-- Phase 6 잔여: (선택) 파이썬 컴포넌트 헬퍼 `yeobaek.kpi()` 등, 중앙 업데이터
+- 다음: Phase 8(확장·밀도·접근성). (선택) 파이썬 컴포넌트 헬퍼 `yeobaek.kpi()`, 중앙 업데이터
+
+## [1.7.0] — 2026-08-07
+### Added
+- **Phase 7(차트 시스템)** — [`charts.js`](charts.js): DS 토큰 쓰는 미니 차트 헬퍼 `window.YB`(`line`/`spark`/`donut`/`bars`). hover 툴팁, 색은 var 토큰이라 라이트/다크·업데이트 자동
+- `yeobaek.CHARTS_JS` + `yeobaek.script_tag()` (주입용), `dashboard.css`에 `.yb-chart`/`.yb-tt`
+- 스캐폴드에 라인차트·도넛 데모 추가
 
 ## [1.6.0] — 2026-08-07
 ### Added

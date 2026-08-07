@@ -48,6 +48,7 @@
 | [`components.md`](components.md) | 컴포넌트 사용법 문서 |
 | [`foundations.md`](foundations.md) | 토대 규칙 (상호작용 상태·모션·아이콘·접근성·데이터viz) |
 | [`dashboard.css`](dashboard.css) | 대시보드 표준 부품 (`yb-*` 컴포넌트) |
+| [`charts.js`](charts.js) | 차트 헬퍼 `window.YB` (line·spark·donut·bars) |
 | [`scaffold/`](scaffold/) | 새 대시보드 스캐폴드 (복사→데이터만 채우기) |
 | [`yeobaek.py`](yeobaek.py) | 파이썬 도구용 단일 소스 (CSS 번들). `import yeobaek` |
 | [`build_yeobaek.py`](build_yeobaek.py) | css → yeobaek.py 생성기 |

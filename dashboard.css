@@ -101,3 +101,10 @@
 .yb-empty h3 { font-size: var(--fs-subhead); font-weight: var(--fw-medium); margin: 10px 0 4px; color: var(--text-primary); }
 .yb-empty p { font-size: var(--fs-caption); color: var(--text-secondary); margin: 0 0 14px; }
 .yb-axt { fill: var(--text-tertiary); font-size: 10.5px; }
+
+/* ---- 차트 (charts.js) ---------------------------------- */
+.yb-chart { display: block; width: 100%; height: auto; overflow: visible; }
+.yb-tt { position: fixed; pointer-events: none; background: var(--surface); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: var(--radius-md); padding: 8px 11px; font-size: 12px;
+  box-shadow: var(--shadow-popover); opacity: 0; transition: opacity .08s; z-index: 50; font-variant-numeric: tabular-nums; }
+.yb-tt b { font-weight: var(--fw-medium); }

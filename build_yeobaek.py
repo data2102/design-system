@@ -27,8 +27,10 @@ tokens = "\n".join(
 ).strip("\n")
 components = read("components.css").strip("\n")
 dashboard = read("dashboard.css").strip("\n")
+charts = read("charts.js").strip("\n")
 
-for label, txt in (("tokens.css", tokens), ("components.css", components), ("dashboard.css", dashboard)):
+for label, txt in (("tokens.css", tokens), ("components.css", components),
+                   ("dashboard.css", dashboard), ("charts.js", charts)):
     if '"""' in txt:
         raise SystemExit(f"{label} 에 三중따옴표(\"\"\") 가 있어 번들 불가. 확인 필요.")
 
@@ -53,7 +55,7 @@ COMPAT = """:root{
   --sans:var(--font-sans); --mono:var(--font-mono);
 }"""
 
-VERSION = "1.6.0"
+VERSION = "1.7.0"
 
 out = f'''"""
 여백(Yeobaek) Design System — 파이썬 배포 번들  (AUTO-GENERATED)
@@ -90,6 +92,11 @@ COMPAT = """{COMPAT}"""
 
 CSS = TOKENS + "\\n" + COMPONENTS + "\\n" + DASHBOARD
 
+# 차트 헬퍼 JS (Phase 7) — window.YB.line/spark/donut/bars
+CHARTS_JS = r"""
+{charts}
+"""
+
 # 기존 도구(자체 변수명 사용)를 위한 토큰+호환 묶음.
 TOKENS_COMPAT = TOKENS + "\\n" + COMPAT
 
@@ -97,6 +104,11 @@ TOKENS_COMPAT = TOKENS + "\\n" + COMPAT
 def style_tag(full=True):
     """<style>...</style> 문자열. full=False 면 토큰(변수)만."""
     return "<style>\\n" + (CSS if full else TOKENS) + "\\n</style>"
+
+
+def script_tag():
+    """<script>...</script> 문자열 — 차트 헬퍼(window.YB) 주입용."""
+    return "<script>\\n" + CHARTS_JS + "\\n</script>"
 '''
 
 with open(os.path.join(BASE, "yeobaek.py"), "w", encoding="utf-8") as f:
