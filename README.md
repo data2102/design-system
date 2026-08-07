@@ -47,6 +47,9 @@
 | [`components.css`](components.css) | 컴포넌트 (폼·피드백·오버레이). tokens.css 다음에 로드 |
 | [`components.md`](components.md) | 컴포넌트 사용법 문서 |
 | [`foundations.md`](foundations.md) | 토대 규칙 (상호작용 상태·모션·아이콘·접근성·데이터viz) |
+| [`yeobaek.py`](yeobaek.py) | 파이썬 도구용 단일 소스 (CSS 번들). `import yeobaek` |
+| [`build_yeobaek.py`](build_yeobaek.py) | css → yeobaek.py 생성기 |
+| [`update_ds.py`](update_ds.py) · `DS업데이트.bat` | 도구 폴더에서 yeobaek.py 최신화 |
 | [`showcase.html`](showcase.html) | 컴포넌트 미리보기 (더블클릭해서 열기) |
 | [`references.md`](references.md) | 참고 디자인 시스템 + 훔칠 것 |
 | [`roadmap.md`](roadmap.md) | 발전 로드맵 (L2→L3) + 컴포넌트 백로그 |
@@ -62,7 +65,17 @@
 <!-- 모니터링 화면이면 상위 요소에 class="theme-dark" -->
 ```
 
-**Python**
+**Python 도구 (serve.py 등) — 단일 소스 `yeobaek.py`** ⭐
+```python
+import yeobaek                       # 폴더에 yeobaek.py 를 함께 둠(vendoring)
+html = f"<style>{yeobaek.CSS}</style> ..."     # 전체(토큰+컴포넌트)
+# 또는 토큰(변수)만:  f"<style>{yeobaek.TOKENS}</style>"
+```
+- DS를 고칠 때 각 도구를 손볼 필요 없이 **`DS업데이트.bat` 실행 → 도구 재실행**만으로 반영.
+- `yeobaek.py` 는 `build_yeobaek.py` 가 tokens.css + components.css 로부터 생성(직접 편집 금지).
+- 오프라인에서도 폴더 안 사본으로 동작. 업데이트할 때만 인터넷 필요.
+
+**토큰 값 상수만 필요할 때**
 ```python
 from tokens import LIGHT, DARK, FS, SP, css_vars
 T = DARK if 모니터링화면 else LIGHT
