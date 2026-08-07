@@ -97,7 +97,7 @@
    .theme-dark 를 붙이거나, 시스템이 dark면 자동 적용.
    → 모니터링·자동화 도구 화면에서 사용.
    ============================================================ */
-.theme-dark {
+.theme-dark, :root[data-theme="dark"] {
   --accent:            #22d3ee;   /* 형광 시안 포인트 */
   --accent-hover:      #38dcf0;
   --accent-pressed:    #0fb9d4;

@@ -31,7 +31,28 @@ for label, txt in (("tokens.css", tokens), ("components.css", components)):
     if '"""' in txt:
         raise SystemExit(f"{label} 에 三중따옴표(\"\"\") 가 있어 번들 불가. 확인 필요.")
 
-VERSION = "1.4.0"
+# 레거시 변수 호환 레이어 — 기존 도구들의 변수명(--plane/--bg/--panel/--ink…)을
+# 캐논 토큰(var(--surface) 등)에 연결. 캐논 변수를 참조하므로 다크 전환도 자동으로 따라감.
+# 도구가 import yeobaek 로 편입될 때  TOKENS + COMPAT  를 함께 주입한다.
+COMPAT = """:root{
+  --plane:var(--bg); --panel:var(--surface);
+  --ink:var(--text-primary); --ink2:var(--text-secondary); --muted:var(--text-secondary);
+  --line:var(--border-strong); --line2:var(--border); --line3:var(--border-strong);
+  --grid:var(--border); --axis:var(--text-tertiary);
+  --accent-soft:var(--accent-bg);
+  --up:var(--success); --up-bg:var(--success-bg); --good:var(--success); --good-ink:var(--success); --ok-bg:var(--success-bg);
+  --down:var(--danger); --down-bg:var(--danger-bg); --crit:var(--danger); --crit-bg:var(--danger-bg);
+  --warn:var(--warning); --warn-bg:var(--warning-bg); --wait:var(--warning); --wait-bg:var(--warning-bg);
+  --s1:var(--accent); --s2:var(--success); --s3:var(--warning);
+  --yA:var(--accent-bg); --yB:var(--accent); --yC:var(--accent);
+  --bar:var(--accent); --target:var(--text-tertiary);
+  --track:var(--surface-sunken);
+  --shadow-pop:var(--shadow-popover); --shadow-card:var(--shadow-card);
+  --radius:var(--radius-md); --num-font:var(--font-mono);
+  --sans:var(--font-sans); --mono:var(--font-mono);
+}"""
+
+VERSION = "1.5.0"
 
 out = f'''"""
 여백(Yeobaek) Design System — 파이썬 배포 번들  (AUTO-GENERATED)
@@ -58,7 +79,13 @@ COMPONENTS = r"""
 {components}
 """
 
+# 레거시 변수 호환(--plane/--bg/--panel/--ink… → 캐논 토큰). 기존 도구 편입용.
+COMPAT = """{COMPAT}"""
+
 CSS = TOKENS + "\\n" + COMPONENTS
+
+# 기존 도구(자체 변수명 사용)를 위한 토큰+호환 묶음.
+TOKENS_COMPAT = TOKENS + "\\n" + COMPAT
 
 
 def style_tag(full=True):

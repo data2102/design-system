@@ -3,7 +3,15 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
-- 컴포넌트 세트 완성(L3). 다음: 실제 도구(나라장터 모니터 등)에 적용하며 검증·보강
+- 다음: Phase 6(대시보드 키트 + serve.py 스캐폴드)
+
+## [1.5.0] — 2026-08-07
+### Added
+- **Phase 5(배포/연결) 완료** — 파이썬 도구용 단일 소스 `yeobaek.py`(`build_yeobaek.py`가 css에서 생성) + `update_ds.py`/`DS업데이트.bat`
+- `COMPAT` 레이어(레거시 변수명 `--plane/--bg/--panel/--ink…` → 캐논 토큰) + `TOKENS_COMPAT`
+### Changed
+- 다크 셀렉터를 `.theme-dark, :root[data-theme="dark"]` 로 확장 (toggle 방식 도구 지원)
+- 실도구 5종(일통계·트래픽·원가·매출·차단IP)을 `import yeobaek` 로 편입 → DS 수정 시 **`DS업데이트.bat` + 재실행**만으로 전 도구 반영 (도구별 CSS 수동 편집 종료)
 
 ## [1.4.0] — 2026-08-06
 ### Added

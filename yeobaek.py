@@ -13,7 +13,7 @@ build_yeobaek.py 가 tokens.css + components.css 로부터 생성합니다. 직�
       data-theme="dark". 시스템 다크도 자동(prefers-color-scheme).
 """
 
-__version__ = "1.4.0"
+__version__ = "1.5.0"
 
 TOKENS = r"""
 /* ============================================================
@@ -114,7 +114,7 @@ TOKENS = r"""
    .theme-dark 를 붙이거나, 시스템이 dark면 자동 적용.
    → 모니터링·자동화 도구 화면에서 사용.
    ============================================================ */
-.theme-dark {
+.theme-dark, :root[data-theme="dark"] {
   --accent:            #22d3ee;   /* 형광 시안 포인트 */
   --accent-hover:      #38dcf0;
   --accent-pressed:    #0fb9d4;
@@ -493,7 +493,29 @@ COMPONENTS = r"""
    격자 stroke=var(--border), 끝점 강조 fill=var(--accent). components.md 레시피 참고. */
 """
 
+# 레거시 변수 호환(--plane/--bg/--panel/--ink… → 캐논 토큰). 기존 도구 편입용.
+COMPAT = """:root{
+  --plane:var(--bg); --panel:var(--surface);
+  --ink:var(--text-primary); --ink2:var(--text-secondary); --muted:var(--text-secondary);
+  --line:var(--border-strong); --line2:var(--border); --line3:var(--border-strong);
+  --grid:var(--border); --axis:var(--text-tertiary);
+  --accent-soft:var(--accent-bg);
+  --up:var(--success); --up-bg:var(--success-bg); --good:var(--success); --good-ink:var(--success); --ok-bg:var(--success-bg);
+  --down:var(--danger); --down-bg:var(--danger-bg); --crit:var(--danger); --crit-bg:var(--danger-bg);
+  --warn:var(--warning); --warn-bg:var(--warning-bg); --wait:var(--warning); --wait-bg:var(--warning-bg);
+  --s1:var(--accent); --s2:var(--success); --s3:var(--warning);
+  --yA:var(--accent-bg); --yB:var(--accent); --yC:var(--accent);
+  --bar:var(--accent); --target:var(--text-tertiary);
+  --track:var(--surface-sunken);
+  --shadow-pop:var(--shadow-popover); --shadow-card:var(--shadow-card);
+  --radius:var(--radius-md); --num-font:var(--font-mono);
+  --sans:var(--font-sans); --mono:var(--font-mono);
+}"""
+
 CSS = TOKENS + "\n" + COMPONENTS
+
+# 기존 도구(자체 변수명 사용)를 위한 토큰+호환 묶음.
+TOKENS_COMPAT = TOKENS + "\n" + COMPAT
 
 
 def style_tag(full=True):
