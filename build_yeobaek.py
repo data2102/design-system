@@ -26,8 +26,9 @@ tokens = "\n".join(
     ln for ln in read("tokens.css").splitlines() if not ln.strip().startswith("@import")
 ).strip("\n")
 components = read("components.css").strip("\n")
+dashboard = read("dashboard.css").strip("\n")
 
-for label, txt in (("tokens.css", tokens), ("components.css", components)):
+for label, txt in (("tokens.css", tokens), ("components.css", components), ("dashboard.css", dashboard)):
     if '"""' in txt:
         raise SystemExit(f"{label} 에 三중따옴표(\"\"\") 가 있어 번들 불가. 확인 필요.")
 
@@ -52,7 +53,7 @@ COMPAT = """:root{
   --sans:var(--font-sans); --mono:var(--font-mono);
 }"""
 
-VERSION = "1.5.0"
+VERSION = "1.6.0"
 
 out = f'''"""
 여백(Yeobaek) Design System — 파이썬 배포 번들  (AUTO-GENERATED)
@@ -79,10 +80,15 @@ COMPONENTS = r"""
 {components}
 """
 
+# 대시보드 키트(Phase 6) — 표준 부품(.yb-kpi/.yb-panel/.yb-table…). 새 도구는 이걸 조립.
+DASHBOARD = r"""
+{dashboard}
+"""
+
 # 레거시 변수 호환(--plane/--bg/--panel/--ink… → 캐논 토큰). 기존 도구 편입용.
 COMPAT = """{COMPAT}"""
 
-CSS = TOKENS + "\\n" + COMPONENTS
+CSS = TOKENS + "\\n" + COMPONENTS + "\\n" + DASHBOARD
 
 # 기존 도구(자체 변수명 사용)를 위한 토큰+호환 묶음.
 TOKENS_COMPAT = TOKENS + "\\n" + COMPAT

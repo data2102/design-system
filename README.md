@@ -47,6 +47,8 @@
 | [`components.css`](components.css) | 컴포넌트 (폼·피드백·오버레이). tokens.css 다음에 로드 |
 | [`components.md`](components.md) | 컴포넌트 사용법 문서 |
 | [`foundations.md`](foundations.md) | 토대 규칙 (상호작용 상태·모션·아이콘·접근성·데이터viz) |
+| [`dashboard.css`](dashboard.css) | 대시보드 표준 부품 (`yb-*` 컴포넌트) |
+| [`scaffold/`](scaffold/) | 새 대시보드 스캐폴드 (복사→데이터만 채우기) |
 | [`yeobaek.py`](yeobaek.py) | 파이썬 도구용 단일 소스 (CSS 번들). `import yeobaek` |
 | [`build_yeobaek.py`](build_yeobaek.py) | css → yeobaek.py 생성기 |
 | [`update_ds.py`](update_ds.py) · `DS업데이트.bat` | 도구 폴더에서 yeobaek.py 최신화 |

@@ -3,7 +3,13 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
-- 다음: Phase 6(대시보드 키트 + serve.py 스캐폴드)
+- Phase 6 잔여: (선택) 파이썬 컴포넌트 헬퍼 `yeobaek.kpi()` 등, 중앙 업데이터
+
+## [1.6.0] — 2026-08-07
+### Added
+- **Phase 6(대시보드 키트) 시작** — [`dashboard.css`](dashboard.css): 표준 대시보드 부품 `yb-*`(kpi·panel·table·alert·bars·delta·chip·tabs·badge·legend·empty). `yeobaek.CSS`에 포함(`yeobaek.DASHBOARD`)
+- [`scaffold/`](scaffold/) — 복사해서 데이터만 채우는 빈 대시보드(`serve.py` + README). yeobaek import + 다크토글 + HTML내보내기 기본 탑재
+- `build_yeobaek.py`가 dashboard.css도 번들에 포함
 
 ## [1.5.0] — 2026-08-07
 ### Added
