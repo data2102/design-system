@@ -3,7 +3,17 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
-- 다음: Phase 8(확장·밀도·접근성). (선택) 파이썬 컴포넌트 헬퍼 `yeobaek.kpi()`, 중앙 업데이터
+- 고도화 로드맵(Phase 5~8) 완료. 이후는 실제 도구 쓰며 필요분 보강 + (선택) 파이썬 헬퍼·중앙 업데이터
+
+## [1.8.0] — 2026-08-07
+### Added
+- **Phase 8(확장·밀도·접근성) 완료**
+- 확장 컴포넌트: 세그먼트 컨트롤(`.yb-seg`), 필터바(`.yb-filterbar`), yb 인터랙티브 요소 포커스 링
+- `compact` 밀도 옵션(`.yb-compact` — 여백·글자 촘촘)
+- **`a11y_check.py`** — tokens.css 색 대비 WCAG 자동점검(라이트/다크). DS 수정 후 회귀 방지
+- 접근성 토큰 `--accent-strong`/`--success-strong`/`--warning-strong`/`--danger-strong` (연틴트 위 글자·채운버튼 AA 확보)
+### Changed
+- `.ds-btn-primary`·`.ds-badge-*`·`.yb-badge-*` 를 `-strong` 토큰으로 → 라이트/다크 **전 항목 WCAG AA 통과**
 
 ## [1.7.0] — 2026-08-07
 ### Added

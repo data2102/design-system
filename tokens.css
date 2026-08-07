@@ -41,6 +41,12 @@
   --danger:            #f03e3e;  --danger-bg:  #fff0f0;
   --info:              #3182f6;  --info-bg:    #e8f3ff;
 
+  /* 진한 텍스트용(연한 배경 위 글자·채운 버튼) — WCAG AA 대비 확보 */
+  --accent-strong:     #1d63c9;   /* 흰 글자 버튼 배경 */
+  --success-strong:    #0a7350;
+  --warning-strong:    #7a5300;
+  --danger-strong:     #c0261e;
+
   /* ===== 타이포 ===== */
   --font-sans: "Noto Sans KR", "Pretendard", -apple-system, "Malgun Gothic", "맑은 고딕", sans-serif;
   --font-mono: "JetBrains Mono", "D2Coding", Consolas, monospace;
@@ -121,6 +127,12 @@
   --danger:            #f87171;  --danger-bg:  #2e1414;
   --info:              #22d3ee;  --info-bg:    #10313a;
 
+  /* 진한 텍스트용 — 다크에선 밝은 값이 어두운 틴트 위에서 이미 AA 통과 */
+  --accent-strong:     #22d3ee;
+  --success-strong:    #34d399;
+  --warning-strong:    #fbbf24;
+  --danger-strong:     #f87171;
+
   --shadow-card:    0 1px 3px rgba(0,0,0,0.4);
   --shadow-popover: 0 8px 24px rgba(0,0,0,0.5);
   --shadow-focus:   0 0 0 3px rgba(34,211,238,0.35);
@@ -143,14 +155,14 @@
 
 .ds-btn    { font-family: var(--font-sans); font-size: var(--fs-subhead); font-weight: var(--fw-medium);
              border: none; border-radius: var(--radius-md); padding: 14px var(--sp-5); cursor: pointer; }
-.ds-btn-primary   { background: var(--accent); color: var(--on-accent); }
+.ds-btn-primary   { background: var(--accent-strong); color: var(--on-accent); }
 .ds-btn-primary:hover  { background: var(--accent-hover); }
 .ds-btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border-strong); }
 
 .ds-badge  { display: inline-block; font-size: var(--fs-footnote); font-weight: var(--fw-medium);
              padding: 3px 10px; border-radius: var(--radius-sm); }
-.ds-badge-success { background: var(--success-bg); color: var(--success); }
-.ds-badge-warning { background: var(--warning-bg); color: var(--warning); }
-.ds-badge-danger  { background: var(--danger-bg);  color: var(--danger); }
+.ds-badge-success { background: var(--success-bg); color: var(--success-strong); }
+.ds-badge-warning { background: var(--warning-bg); color: var(--warning-strong); }
+.ds-badge-danger  { background: var(--danger-bg);  color: var(--danger-strong); }
 
 :focus-visible { outline: none; box-shadow: var(--shadow-focus); }

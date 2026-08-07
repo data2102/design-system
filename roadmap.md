@@ -81,7 +81,7 @@
 | **Phase 5 · 배포/연결** | 한 소스를 모든 도구가 참조 → 고치면 재실행만으로 전파 | ✅ 완료 (v1.5.0) |
 | **Phase 6 · 대시보드 키트** | 표준 컴포넌트(dashboard.css `yb-*`) + serve.py 스캐폴드 | ✅ 핵심 완료 (v1.6.0) |
 | **Phase 7 · 차트 시스템** | DS 토큰 쓰는 미니 차트 헬퍼 `window.YB`(charts.js) | ✅ 완료 (v1.7.0) |
-| **Phase 8 · 확장·밀도·접근성** | 날짜범위·필터바·커맨드, compact 밀도, 대비 자동점검 | 예정 |
+| **Phase 8 · 확장·밀도·접근성** | 세그먼트·필터바, compact 밀도, a11y_check.py(대비 자동점검) | ✅ 완료 (v1.8.0) |
 
 ### Phase 5 — 배포/연결 (파이썬 도구용 단일 소스)
 - [x] `yeobaek.py` — tokens.css + components.css 를 묶은 파이썬 배포 번들 (`build_yeobaek.py`가 생성)

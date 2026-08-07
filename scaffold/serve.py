@@ -64,10 +64,16 @@ PAGE = r"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
     <div><h1 id="t"></h1><div class="yb-sub" id="s"></div></div>
     <div class="yb-toolbar">
       <button class="yb-tbtn" id="exp">📥 HTML</button>
+      <button class="yb-tbtn" id="dense">촘촘히</button>
       <button class="yb-tbtn" id="theme">◐ 테마</button>
     </div>
   </div>
   <div id="alerts" class="yb-alerts" style="margin-bottom:16px"></div>
+  <div class="yb-filterbar">
+    <div class="grow"><input class="ds-input" type="search" placeholder="검색 (예: 항목명)"></div>
+    <div class="yb-chips" id="chips"><button class="yb-chip on">전체</button><button class="yb-chip">A</button><button class="yb-chip">B</button></div>
+    <div class="yb-seg" id="seg"><button class="on">일별</button><button>누적</button></div>
+  </div>
   <div class="yb-kpis" id="kpis"></div>
   <div class="yb-h2">상세 <span class="hint">표준 표 컴포넌트</span></div>
   <div class="yb-panel" style="margin-bottom:14px">
@@ -95,6 +101,9 @@ $("#rows").innerHTML = D.rows.map(r=>`<tr><td>${r.name}</td><td class="num">${r.
 $("#bars").innerHTML = D.bars.map(b=>`<div class="yb-bar"><span class="k">${b.k}</span><span class="track"><span class="fill" style="width:${b.pct}%;background:${b.color}"></span></span><span class="v">${b.v}</span></div>`).join("");
 YB.line("#chart", {labels:D.trend.labels, series:[{name:"실적", values:D.trend.values}], area:true, yFmt:v=>v.toFixed(1)+"억"});
 YB.donut("#donut", D.donut);
+const seg=(box)=>box.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;[...box.children].forEach(x=>x.classList.toggle("on",x===b));});
+seg($("#chips")); seg($("#seg"));
+$("#dense").addEventListener("click",()=>document.querySelector(".yb-wrap").classList.toggle("yb-compact"));
 $("#theme").addEventListener("click",()=>{const r=document.documentElement;r.setAttribute("data-theme", r.getAttribute("data-theme")==="dark"?"light":"dark");});
 $("#exp").addEventListener("click",()=>{const h="<!doctype html>\n"+document.documentElement.outerHTML;const b=new Blob([h],{type:"text/html;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=D.title+".html";a.click();});
 </script>

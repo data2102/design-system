@@ -55,7 +55,7 @@ COMPAT = """:root{
   --sans:var(--font-sans); --mono:var(--font-mono);
 }"""
 
-VERSION = "1.7.0"
+VERSION = "1.8.0"
 
 out = f'''"""
 여백(Yeobaek) Design System — 파이썬 배포 번들  (AUTO-GENERATED)

@@ -13,7 +13,7 @@ build_yeobaek.py 가 tokens.css + components.css 로부터 생성합니다. 직�
       data-theme="dark". 시스템 다크도 자동(prefers-color-scheme).
 """
 
-__version__ = "1.7.0"
+__version__ = "1.8.0"
 
 TOKENS = r"""
 /* ============================================================
@@ -57,6 +57,12 @@ TOKENS = r"""
   --warning:           #f59f00;  --warning-bg: #fff9db;
   --danger:            #f03e3e;  --danger-bg:  #fff0f0;
   --info:              #3182f6;  --info-bg:    #e8f3ff;
+
+  /* 진한 텍스트용(연한 배경 위 글자·채운 버튼) — WCAG AA 대비 확보 */
+  --accent-strong:     #1d63c9;   /* 흰 글자 버튼 배경 */
+  --success-strong:    #0a7350;
+  --warning-strong:    #7a5300;
+  --danger-strong:     #c0261e;
 
   /* ===== 타이포 ===== */
   --font-sans: "Noto Sans KR", "Pretendard", -apple-system, "Malgun Gothic", "맑은 고딕", sans-serif;
@@ -138,6 +144,12 @@ TOKENS = r"""
   --danger:            #f87171;  --danger-bg:  #2e1414;
   --info:              #22d3ee;  --info-bg:    #10313a;
 
+  /* 진한 텍스트용 — 다크에선 밝은 값이 어두운 틴트 위에서 이미 AA 통과 */
+  --accent-strong:     #22d3ee;
+  --success-strong:    #34d399;
+  --warning-strong:    #fbbf24;
+  --danger-strong:     #f87171;
+
   --shadow-card:    0 1px 3px rgba(0,0,0,0.4);
   --shadow-popover: 0 8px 24px rgba(0,0,0,0.5);
   --shadow-focus:   0 0 0 3px rgba(34,211,238,0.35);
@@ -160,15 +172,15 @@ TOKENS = r"""
 
 .ds-btn    { font-family: var(--font-sans); font-size: var(--fs-subhead); font-weight: var(--fw-medium);
              border: none; border-radius: var(--radius-md); padding: 14px var(--sp-5); cursor: pointer; }
-.ds-btn-primary   { background: var(--accent); color: var(--on-accent); }
+.ds-btn-primary   { background: var(--accent-strong); color: var(--on-accent); }
 .ds-btn-primary:hover  { background: var(--accent-hover); }
 .ds-btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border-strong); }
 
 .ds-badge  { display: inline-block; font-size: var(--fs-footnote); font-weight: var(--fw-medium);
              padding: 3px 10px; border-radius: var(--radius-sm); }
-.ds-badge-success { background: var(--success-bg); color: var(--success); }
-.ds-badge-warning { background: var(--warning-bg); color: var(--warning); }
-.ds-badge-danger  { background: var(--danger-bg);  color: var(--danger); }
+.ds-badge-success { background: var(--success-bg); color: var(--success-strong); }
+.ds-badge-warning { background: var(--warning-bg); color: var(--warning-strong); }
+.ds-badge-danger  { background: var(--danger-bg);  color: var(--danger-strong); }
 
 :focus-visible { outline: none; box-shadow: var(--shadow-focus); }
 """
@@ -569,10 +581,10 @@ DASHBOARD = r"""
 
 /* ---- 배지 / 칩 / 탭 ------------------------------------ */
 .yb-badge { display: inline-block; font-size: 11px; font-weight: var(--fw-medium); padding: 2px 9px; border-radius: var(--radius-sm); }
-.yb-badge-info { background: var(--info-bg); color: var(--info); }
-.yb-badge-success { background: var(--success-bg); color: var(--success); }
-.yb-badge-warning { background: var(--warning-bg); color: var(--warning); }
-.yb-badge-danger { background: var(--danger-bg); color: var(--danger); }
+.yb-badge-info { background: var(--info-bg); color: var(--accent-strong); }
+.yb-badge-success { background: var(--success-bg); color: var(--success-strong); }
+.yb-badge-warning { background: var(--warning-bg); color: var(--warning-strong); }
+.yb-badge-danger { background: var(--danger-bg); color: var(--danger-strong); }
 .yb-badge-mute { background: var(--surface-sunken); color: var(--text-disabled); }
 .yb-chip { font-family: var(--font-sans); font-size: var(--fs-caption); font-weight: var(--fw-medium); padding: 6px 14px;
   border-radius: var(--radius-pill); cursor: pointer; background: var(--surface-sunken); color: var(--text-secondary); border: 1px solid transparent; }
@@ -605,6 +617,36 @@ DASHBOARD = r"""
   border: 1px solid var(--border); border-radius: var(--radius-md); padding: 8px 11px; font-size: 12px;
   box-shadow: var(--shadow-popover); opacity: 0; transition: opacity .08s; z-index: 50; font-variant-numeric: tabular-nums; }
 .yb-tt b { font-weight: var(--fw-medium); }
+
+/* ============================================================
+   Phase 8 — 확장 · 밀도 · 접근성
+   ============================================================ */
+
+/* ---- 세그먼트 컨트롤 (월별/누적 같은 전환) ------------- */
+.yb-seg { display: inline-flex; background: var(--surface-sunken); border-radius: 10px; padding: 2px; gap: 2px; }
+.yb-seg button { font-family: var(--font-sans); font-size: 12.5px; font-weight: var(--fw-medium); color: var(--text-secondary);
+  background: none; border: none; padding: 6px 14px; border-radius: 8px; cursor: pointer; }
+.yb-seg button.on { background: var(--surface); color: var(--text-primary); box-shadow: var(--shadow-card); }
+
+/* ---- 필터바 (검색 + 칩 + 셀렉트 조합) ------------------ */
+.yb-filterbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+.yb-filterbar .grow { flex: 1; min-width: 160px; }
+.yb-filterbar .yb-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ---- 접근성: 키보드 포커스 링 (필수) ------------------- */
+.yb-tbtn:focus-visible, .yb-chip:focus-visible, .yb-tab:focus-visible,
+.yb-seg button:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+
+/* ---- 밀도: compact (데이터 밀집 화면용) ---------------- */
+/* 상위에 class="yb-compact" 를 붙이면 여백·글자가 촘촘해진다. */
+.yb-compact .yb-kpi { padding: 11px 13px; }
+.yb-compact .yb-kpi .val { font-size: 22px; }
+.yb-compact .yb-panel { padding: 13px 14px; }
+.yb-compact .yb-h2 { margin: 18px 0 8px; }
+.yb-compact .yb-table td, .yb-compact .yb-table tbody td { padding: 8px 9px; }
+.yb-compact .yb-table thead th { padding: 0 9px 7px; }
+.yb-compact .yb-alert { padding: 9px 12px; }
+.yb-compact .yb-kpis { gap: 8px; }
 """
 
 # 레거시 변수 호환(--plane/--bg/--panel/--ink… → 캐논 토큰). 기존 도구 편입용.
