@@ -5,6 +5,15 @@
 ## [Unreleased]
 - 고도화 로드맵(Phase 5~8) 완료. 이후는 실제 도구 쓰며 필요분 보강 + (선택) 파이썬 헬퍼·중앙 업데이터
 
+## [1.9.0] — 2026-08-13
+### Added
+- **마케팅/랜딩 패턴** [`marketing.css`](marketing.css) — 웹 랜딩·브랜드 페이지용(레퍼 서비스 랜딩 "토스 임팩트" 방향에서 추출)
+  - 히어로: 은은한 액센트 틴트 배경 블록(`.ds-hero-wrap`) + 중앙 정렬 임팩트(`.ds-hero`, `.ds-hero .accent`)
+  - 알약형 CTA `.ds-btn-pill`(primary/ghost, 포커스 링·active 준수)
+  - 플로팅 제품 목업 카드 `.ds-shot`, 기능 카드+아이콘칩 `.ds-feature-card`/`.ds-feature-ico`, 마무리 CTA 밴드 `.ds-cta-band`
+  - 전부 토큰 기반 → 라이트 기본 + `[data-theme="dark"]` 자동 대응
+- 예시: [`marketing-example.html`](marketing-example.html) (라이트/다크 토글 포함)
+
 ## [1.8.0] — 2026-08-07
 ### Added
 - **Phase 8(확장·밀도·접근성) 완료**

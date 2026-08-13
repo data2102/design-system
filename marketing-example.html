@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>여백 DS — 마케팅/랜딩 패턴 예시</title>
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="marketing.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css" />
+<style>
+  body{margin:0;background:var(--surface);color:var(--text-primary);font-family:var(--font-sans);}
+  .nav{display:flex;align-items:center;justify-content:space-between;max-width:1040px;margin:0 auto;padding:20px 28px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:18px;}
+  .mark{width:30px;height:30px;border-radius:9px;background:var(--text-primary);color:var(--surface);display:flex;align-items:center;justify-content:center;font-weight:700;}
+  .toggle{height:38px;padding:0 14px;border-radius:var(--radius-pill);border:1px solid var(--border-strong);background:var(--surface);color:var(--text-primary);cursor:pointer;font-family:inherit;}
+  .search{display:flex;align-items:center;gap:8px;height:46px;padding:0 16px;border-radius:12px;background:var(--surface-sunken);border:1px solid var(--border);color:var(--text-tertiary);font-size:14px;margin-bottom:14px;}
+  .g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .c{border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+  .c .t{height:66px;display:flex;align-items:center;justify-content:center;font-size:22px;background:var(--accent-bg);color:var(--accent);}
+  .c .in{padding:11px 12px;}.c .bd{font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--accent-bg);color:var(--accent-strong);}
+  .c h4{font-size:12.5px;margin:7px 0 3px;}.c p{font-size:10.5px;color:var(--text-tertiary);margin:0;}
+  @media(max-width:640px){.g{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+  <div class="ds-hero-wrap">
+    <div class="nav">
+      <div class="brand"><span class="mark">Y</span> 브랜드</div>
+      <button class="toggle" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';">라이트/다크</button>
+    </div>
+    <header class="ds-hero">
+      <span class="eyebrow">제품 카테고리 라벨</span>
+      <h1>핵심 가치를 한 문장,<br><span class="accent">강조어</span>는 액센트로</h1>
+      <p class="lead">서브 카피는 조용한 회색으로 한두 줄. 제품이 무엇을 해주는지 명확하게.</p>
+      <div class="ds-hero-cta">
+        <button class="ds-btn-pill primary">무료로 시작하기</button>
+        <button class="ds-btn-pill ghost">로그인</button>
+      </div>
+    </header>
+    <div class="ds-shot" style="margin-bottom:8px;">
+      <div class="search"><i class="ti ti-search"></i> 제품 목업/스크린샷 영역</div>
+      <div class="g">
+        <div class="c"><div class="t"><i class="ti ti-link"></i></div><div class="in"><span class="bd">라벨</span><h4>카드 제목</h4><p>짧은 설명.</p></div></div>
+        <div class="c"><div class="t"><i class="ti ti-photo"></i></div><div class="in"><span class="bd">라벨</span><h4>카드 제목</h4><p>짧은 설명.</p></div></div>
+        <div class="c"><div class="t"><i class="ti ti-file-description"></i></div><div class="in"><span class="bd">라벨</span><h4>카드 제목</h4><p>짧은 설명.</p></div></div>
+        <div class="c"><div class="t"><i class="ti ti-note"></i></div><div class="in"><span class="bd">라벨</span><h4>카드 제목</h4><p>짧은 설명.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ds-mkt-section">
+    <h2 class="ds-mkt-h2">기능 섹션 제목</h2>
+    <p class="ds-mkt-lead">보조 설명 한 줄.</p>
+    <div class="ds-feature-grid">
+      <div class="ds-feature-card"><div class="ds-feature-ico"><i class="ti ti-sparkles"></i></div><h3>기능 하나</h3><p>아이콘은 Tabler 한 세트로 통일(이모지 혼용 금지).</p></div>
+      <div class="ds-feature-card"><div class="ds-feature-ico"><i class="ti ti-search"></i></div><h3>기능 둘</h3><p>토큰 기반이라 라이트/다크 자동 대응.</p></div>
+      <div class="ds-feature-card"><div class="ds-feature-ico"><i class="ti ti-devices"></i></div><h3>기능 셋</h3><p>포커스 링·active 등 상호작용 상태 준수.</p></div>
+    </div>
+  </section>
+
+  <div class="ds-cta-band">
+    <h2>마무리 한 줄,<br>행동을 부르는 카피</h2>
+    <div class="ds-hero-cta" style="margin-top:24px;"><button class="ds-btn-pill primary">무료로 시작하기</button></div>
+  </div>
+</body>
+</html>
