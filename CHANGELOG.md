@@ -5,6 +5,19 @@
 ## [Unreleased]
 - 고도화 로드맵(Phase 5~8) 완료. 이후는 실제 도구 쓰며 필요분 보강 + (선택) 파이썬 헬퍼·중앙 업데이터
 
+## [1.10.0] — 2026-08-27
+### Added
+- **`applications/`** — 실제 작업물에 DS를 입힌 적용본을 모으는 폴더 ([`applications/README.md`](applications/README.md))
+  - 첫 적용본: [`kcb-okname-admin.html`](applications/kcb-okname-admin.html) — KCB 오케이네임 관리자 데모 v27(라이트)
+  - 클래스 이름은 그대로 두고 CSS 레이어만 토큰으로 교체 → 화면 생성 JS 무수정
+  - HEX 332곳(고유 62색) → 0곳, `font-weight:800/900` 37곳 → 0곳, 어중간한 간격·radius 를 `--sp-*`/`--radius-*` 로 정리
+  - 사이드 메뉴의 유니코드 기호·이모지 혼용 → Tabler 아웃라인 인라인 SVG 한 세트(`ico()` 헬퍼)
+  - 접근성: 전 요소 `--shadow-focus`, 모달 19곳 `role="dialog" aria-modal="true"` + ESC 닫기 + 포커스 이동/복귀, `prefers-reduced-motion`
+  - 마이크로카피: `alert()` → DS 토스트·모달, 수동태 → 능동태 21곳, 빈 화면은 초대문으로
+- **`applications/apply_ds.py`** — 적용본 안의 인라인 DS 사본(`YB:TOKENS`/`YB:COMPONENTS` 마커)을 최신 tokens.css·components.css 로 재주입
+### Notes
+- 적용본의 모달 scrim·페이드는 `.ds-overlay` 와 같은 값을 쓴다(`rgba(0,0,0,.45)`, `ds-fade`). DS 에 scrim 토큰이 없어 값을 맞춰 둔 것 — 토큰화는 백로그
+
 ## [1.9.0] — 2026-08-13
 ### Added
 - **마케팅/랜딩 패턴** [`marketing.css`](marketing.css) — 웹 랜딩·브랜드 페이지용(레퍼 서비스 랜딩 "토스 임팩트" 방향에서 추출)

@@ -8,6 +8,7 @@
 **🌐 라이브 미리보기 (공유용 링크)**
 - 디자인 시스템 소개 → https://data2102.github.io/design-system/
 - 작업물 적용 예시 → https://data2102.github.io/design-system/examples.html
+- 실제 적용본 (KCB 오케이네임 관리자) → https://data2102.github.io/design-system/applications/kcb-okname-admin.html
 
 ---
 
@@ -51,6 +52,7 @@
 | [`charts.js`](charts.js) | 차트 헬퍼 `window.YB` (line·spark·donut·bars) |
 | [`a11y_check.py`](a11y_check.py) | 색 대비 WCAG 자동점검 (라이트/다크) |
 | [`scaffold/`](scaffold/) | 새 대시보드 스캐폴드 (복사→데이터만 채우기) |
+| [`applications/`](applications/) | 실제 작업물에 DS를 입힌 적용본 + `apply_ds.py`(토큰 재주입) |
 | [`yeobaek.py`](yeobaek.py) | 파이썬 도구용 단일 소스 (CSS 번들). `import yeobaek` |
 | [`build_yeobaek.py`](build_yeobaek.py) | css → yeobaek.py 생성기 |
 | [`update_ds.py`](update_ds.py) · `DS업데이트.bat` | 도구 폴더에서 yeobaek.py 최신화 |
