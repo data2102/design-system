@@ -295,8 +295,8 @@
 .ds-bars { display:flex; flex-direction:column; gap:10px; }
 .ds-bar-row { display:flex; align-items:center; gap:10px; font-size:var(--fs-caption); }
 .ds-bar-row .k { width:52px; color:var(--text-secondary); flex-shrink:0; }
-.ds-bar-track { flex:1; height:8px; border-radius:var(--radius-pill); background:var(--surface-sunken); overflow:hidden; }
-.ds-bar-fill { height:100%; border-radius:var(--radius-pill); background:var(--viz-1); transition:width var(--dur-base) var(--ease-standard); }
+.ds-bar-track { display:block; flex:1; height:8px; border-radius:var(--radius-pill); background:var(--surface-sunken); overflow:hidden; }
+.ds-bar-fill { display:block; height:100%; border-radius:var(--radius-pill); background:var(--viz-1); transition:width var(--dur-base) var(--ease-standard); }
 .ds-bar-row .v { width:28px; text-align:right; color:var(--text-tertiary); font-variant-numeric:tabular-nums; flex-shrink:0; }
 
 /* ---- 범례 (Legend) ------------------------------------- */
