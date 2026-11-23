@@ -56,6 +56,7 @@
 | [`update_ds.py`](update_ds.py) · `DS업데이트.bat` | 도구 폴더에서 yeobaek.py 최신화 |
 | [`showcase.html`](showcase.html) | 컴포넌트 미리보기 (더블클릭해서 열기) |
 | [`references.md`](references.md) | 참고 디자인 시스템 + 훔칠 것 |
+| [`ui-dictionary.md`](ui-dictionary.md) | UI 이름 사전 — 영역별(알림·로딩·폼·AI·빈 화면·제스처·모션·이동·다크패턴·아이콘) 이름 ↔ 여백 DS 매핑 |
 | [`roadmap.md`](roadmap.md) | 발전 로드맵 (L2→L3) + 컴포넌트 백로그 |
 | [`CHANGELOG.md`](CHANGELOG.md) | 버전 변경 기록 |
 

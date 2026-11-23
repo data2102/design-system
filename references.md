@@ -25,6 +25,8 @@
 
 ## 학습용 메타 자료
 
+- UI 이름 사전(영역 분류의 기준) — [우디디자인랩 UI 미니 사전](https://woodydesignlab.com/ui/dict) → 우리 매핑은 [`ui-dictionary.md`](ui-dictionary.md)
+
 - 디자인 시스템 해부 개념 — [The Design System Guide](https://thedesignsystem.guide/foundations)
 - 컴포넌트/접근성 체크리스트 — [designsystemchecklist.com](https://www.designsystemchecklist.com)
 - 스터디할 실제 시스템 모음 — [UXPin: 15 best design systems](https://www.uxpin.com/studio/blog/best-design-system-examples/)
