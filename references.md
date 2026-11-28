@@ -25,6 +25,7 @@
 
 ## 학습용 메타 자료
 
+- 화면 효과 오픈소스 4종 고르기 — [HANIEE_IM 가이드](https://hani.nioh.cloud/guides/claude-code-site-effects) → 우리 규칙은 [`effects.md`](effects.md)
 - UI 이름 사전(영역 분류의 기준) — [우디디자인랩 UI 미니 사전](https://woodydesignlab.com/ui/dict) → 우리 매핑은 [`ui-dictionary.md`](ui-dictionary.md)
 
 - 디자인 시스템 해부 개념 — [The Design System Guide](https://thedesignsystem.guide/foundations)

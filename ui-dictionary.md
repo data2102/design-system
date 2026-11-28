@@ -151,8 +151,13 @@ AI 기능이 들어간 도구(요약·분류·자동화)를 만들 때.
 | 쉬머 Shimmer | 스켈레톤 반짝임 | ✅ |
 | 공유 요소 전환 Shared element | 목록 → 상세 이어지는 전환 | ⬜ |
 | 이징 Easing | 가속/감속 곡선 | ✅ 토큰 |
+| 리퀴드 로고 Liquid logo | 로고가 녹고 굴절 — 랜딩 전용 | ⬜ 규칙만 → [effects.md](effects.md) |
+| 리퀴드 글래스 Liquid glass | 굴절 유리 패널 — 랜딩 전용 | ⬜ 규칙만 → [effects.md](effects.md) |
+| 셰이더 그라디언트 Shader gradient | 흐르는 그러데이션 배경 — 랜딩 히어로 전용 | ⬜ 규칙만 → [effects.md](effects.md) |
+| 3D 오브젝트 | 천천히 도는 입체 도형 — 랜딩 전용 | ⬜ 규칙만 → [effects.md](effects.md) |
 
 원칙: 움직임은 **설명**을 위해서만. 장식용 애니메이션 금지, `prefers-reduced-motion`이면 끔.
+예외: 랜딩 페이지 히어로에 **화면 효과 하나**만 허용 — 규칙은 [`effects.md`](effects.md).
 
 ---
 
