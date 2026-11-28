@@ -1,30 +1,35 @@
-# research — 조사 기록
+# research — 조사 기록 (검토 전)
 
-다른 세션에서 꺼내 쓰라고 모아 두는 조사 결과. 화면을 만들거나 점검하기 전에 여기를 먼저 읽는다.
+조사한 것을 **모아 두는 곳**. 여기 있는 내용은 여백 DS의 규칙이 아니다.
+DS 본체에 반영할지는 [`review.md`](review.md) 에서 검토해서 정하고, 채택된 것만 본체를 고친다.
+
+> 왜: 조사 내용이 검토 없이 계속 들어가면 DS가 이것저것 섞여 일관성이 깨진다.
+
+## 흐름
+
+```
+조사(주간 리서치·사이트 점검) → research/ 에 기록 → review.md 에 후보 추가(대기)
+   → 사용자와 검토 → 채택만 DS 본체 반영 + CHANGELOG
+```
 
 ## 파일
 
-| 파일 | 내용 | 언제 읽나 |
-|---|---|---|
-| [`ai-tells.md`](ai-tells.md) | AI 티 체크리스트 (화면·문구·신뢰·코드 신호 + 여백식 처방 + 검증법) | 새 화면·랜딩을 만들 때, 점검할 때 |
-| [`weekly/`](weekly/) | 주간 AI 활용 리서치 요약 (매주 월요일 자동 추가) | 새 스킬·도구·작업 방식을 찾을 때 |
-| [`audits/`](audits/) | 사이트별 점검 기록 | 그 사이트를 다시 손볼 때 |
+| 파일 | 내용 |
+|---|---|
+| [`review.md`](review.md) | 검토 목록 — DS 반영 후보와 상태(대기/채택/보류/버림) |
+| [`ai-tells.md`](ai-tells.md) | AI 티 체크리스트 조사 자료 (화면·문구·신뢰·코드 신호와 처방 후보) |
+| [`weekly/`](weekly/) | 주간 AI 활용 리서치 요약 (매주 월요일 자동 추가) |
+| [`audits/`](audits/) | 사이트별 점검 기록 |
 
 ## Claude에게 시킬 때
 
-> 여백 디자인 시스템의 research/ai-tells.md 기준으로 ○○ 점검해줘
+> 여백 DS research/review.md 대기 항목 검토하자
 
-> github.com/data2102/design-system 의 research/ 최근 주간 리서치 보고 지금 작업에 쓸 만한 거 골라줘
-
-raw URL:
-```
-https://raw.githubusercontent.com/data2102/design-system/main/research/ai-tells.md
-https://raw.githubusercontent.com/data2102/design-system/main/research/README.md
-```
+> research/ 최근 주간 리서치 보고 지금 작업에 쓸 만한 거 골라줘 (DS는 고치지 말고)
 
 ## 쌓는 규칙
 
+- 조사는 `research/` 안에서만 쓴다. DS 본체 파일은 검토 없이 고치지 않는다
 - 한 줄 요약은 내 말로. 원문 복붙 안 함. 링크는 꼭 붙인다
 - 확인 못 한 숫자는 "확인 못 함"
-- 새로 알게 된 AI 티 신호는 `ai-tells.md` 표에 번호를 이어서 추가
 - 점검은 `audits/사이트-YYYY-MM-DD.md`

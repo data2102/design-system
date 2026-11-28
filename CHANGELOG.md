@@ -3,8 +3,9 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
-- **조사 기록 폴더** [`research/`](research/) 추가 — 다른 세션에서 꺼내 쓰는 용도
-  - [`research/ai-tells.md`](research/ai-tells.md): AI 티 체크리스트(화면 V1~V11·문구 C1~C7·신뢰 T1~T6·코드) + 여백식 처방 + 5초 테스트. `marketing.css` 패턴 중 AI 티와 겹치는 것(틴트 그라디언트 히어로, 색 그림자 알약 버튼, 아이콘칩 기능 카드, 중앙 정렬 섹션) 자체 점검 포함
+- **조사 기록 폴더** [`research/`](research/) 추가 — 조사를 모아 두고, DS 반영은 검토 후 채택분만
+  - [`research/review.md`](research/review.md): 검토 목록. 후보 R-001~R-008 (모두 `대기`). DS 본체는 아직 안 바꿈
+  - [`research/ai-tells.md`](research/ai-tells.md): AI 티 체크리스트 조사 자료(화면 V1~V11·문구 C1~C7·신뢰 T1~T6·코드) + `marketing.css` 자체 점검
   - [`research/weekly/`](research/weekly/): 주간 AI 활용 리서치 요약 (매주 월요일 자동 추가)
   - [`research/audits/refloworks-2026-11-27.md`](research/audits/refloworks-2026-11-27.md): refloworks.com 구조·문구 점검
 - **UI 이름 사전** [`ui-dictionary.md`](ui-dictionary.md) 추가 — 10개 영역(알림과 피드백·로딩·입력 폼·AI 화면·빈 화면·제스처·움직임·이동 구조·다크 패턴·메뉴 아이콘 별명)별 UI 이름 ↔ 여백 DS 클래스 매핑, 고르는 규칙, 여백식 예시 문구. 빈칸은 roadmap "UI 사전 기반 백로그"로
