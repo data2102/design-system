@@ -24,8 +24,8 @@
   font-size: 16px; font-weight: var(--fw-bold); display: inline-flex; align-items: center; justify-content: center;
   gap: 8px; border: 1px solid transparent; cursor: pointer;
   transition: background var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast), transform var(--dur-fast); }
-.ds-btn-pill.primary { background: var(--accent); color: var(--on-accent); box-shadow: 0 8px 20px rgba(49,130,246,.30); }
-.ds-btn-pill.primary:hover { background: var(--accent-hover); }
+.ds-btn-pill.primary { background: var(--accent-strong); color: var(--on-accent); box-shadow: 0 8px 20px rgba(49,130,246,.30); }  /* 바탕은 accent-strong — 흰 글자 4.5 넘게 (R-011) */
+.ds-btn-pill.primary:hover { background: var(--accent-pressed); }
 .ds-btn-pill.ghost { background: var(--surface); border-color: var(--border-strong); color: var(--text-primary); }
 .ds-btn-pill.ghost:hover { background: var(--surface-sunken); }
 .ds-btn-pill:focus-visible { outline: none; box-shadow: var(--shadow-focus); }

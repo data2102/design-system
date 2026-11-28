@@ -25,9 +25,9 @@ DS 본체 = `tokens.css` `components.css` `dashboard.css` `marketing.css` `chart
 | R-006 | "갱신 날짜" 표기 패턴 (카드·표 위 기준일 한 줄) 컴포넌트화 | T3, T4 · [ASAP 리더보드](https://asapai.co.kr/leaderboard/) | components.css, components.md | 대기 | | |
 | R-007 | 화면 완성 전 점검 단계로 AI 티 체크리스트를 foundations 에 연결 | ai-tells 전체 | foundations.md | 대기 | | |
 | R-008 | 문구 규칙에 C2~C5 (대구·셋 나열·대시·슬로건 반복 피하기) 추가 | C2~C5 | design-system.md | 대기 | | |
-| R-009 | `--text-tertiary` 를 #5f6a78 로 (안내 문장에 쓰면 3.0 : 1 → 5.5 : 1). `a11y_check.py` 의 이 쌍 기준도 4.5 로 | [refloworks 적용기록](audits/refloworks-2026-11-28-적용기록.md) — 잰 값 | tokens.css, tokens.py, a11y_check.py, yeobaek.py | 대기 | | |
-| R-010 | `--warm` 을 #a8522f 로 (글자·흰 글자 바탕 3.1~3.6 : 1 → 5.4 : 1) | 같은 기록 | tokens.css, tokens.py | 대기 | | |
-| R-011 | `.ds-btn-pill.primary` 바탕을 `--accent-strong` 으로 (흰 글자 3.7 : 1 → 5.7 : 1) | 같은 기록 · v1.8 에서 `.ds-btn-primary` 는 이미 그렇게 함 | marketing.css | 대기 | | |
+| R-009 | `--text-tertiary` 를 #5f6a78 로 (안내 문장에 쓰면 3.0 : 1 → 5.5 : 1). `a11y_check.py` 의 이 쌍 기준도 4.5 로 | [refloworks 적용기록](audits/refloworks-2026-11-28-적용기록.md) — 잰 값 | tokens.css, tokens.py, a11y_check.py, yeobaek.py | 채택 | 2026-11-28 | 안내 문장에 쓰는 색이라 본문 기준(4.5)이 맞음. 사이트에서 잰 값 3.0 → 5.5. a11y_check 기준도 4.5 로, bg 위 쌍 추가 |
+| R-010 | `--warm` 을 #a8522f 로 (글자·흰 글자 바탕 3.1~3.6 : 1 → 5.4 : 1) | 같은 기록 | tokens.css, tokens.py | 채택 | 2026-11-28 | 글자·흰 글자 바탕 모두 3.1~3.6 → 5.4. a11y_check 에 warm 쌍 추가 |
+| R-011 | `.ds-btn-pill.primary` 바탕을 `--accent-strong` 으로 (흰 글자 3.7 : 1 → 5.7 : 1) | 같은 기록 · v1.8 에서 `.ds-btn-primary` 는 이미 그렇게 함 | marketing.css | 채택 | 2026-11-28 | 흰 글자 3.7 → 5.7. `.ds-btn-primary` 와 같은 방식(v1.8) |
 | R-012 | 제목 한 구절만 색칠하는 `.ds-hero h1 .accent` 를 제목과 같은 색으로 (또는 클래스 제거) | frontend-design 「한 낱말만 강조」 · Impeccable | marketing.css, marketing-example.html | 대기 | | |
 | R-013 | `.ds-feature-ico` 의 둥근 상자 제거 — 아이콘은 제목 옆에 | Impeccable 「Icon tile stacked above heading」 | marketing.css | 대기 | | |
 | R-014 | 한글 줄바꿈 기본값: 제목 `text-wrap: balance`, 본문 `pretty`, `word-break: keep-all`, `overflow-wrap: break-word` | orr.design 팁 5 · MDN | tokens.css | 대기 | | |

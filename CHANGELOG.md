@@ -3,6 +3,13 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
+### Changed — 검토에서 채택 (2026-11-28, [`research/review.md`](research/review.md) R-009 · R-010 · R-011)
+- `--text-tertiary` #8b95a1 → **#5f6a78**. 안내 문장에 쓰면 흰 바탕 대비가 3.0 : 1 이었다 → 5.5 : 1 (R-009)
+- `--warm` #c96f4c → **#a8522f**. 글자·흰 글자 바탕 모두 3.1~3.6 : 1 → 5.4 : 1 (R-010). `--viz-4` 는 그대로
+- `.ds-btn-pill.primary` 바탕 `--accent` → **`--accent-strong`**, hover 는 `--accent-pressed`. 흰 글자 3.7 : 1 → 5.7 : 1 (R-011)
+- `a11y_check.py`: `text-tertiary` 기준을 3.0 → 4.5 로, `text-tertiary/bg` · `warm/surface` · `on-accent/warm` 쌍 추가. 라이트/다크 전 항목 통과
+- `tokens.py` · `yeobaek.py` · `scaffold/yeobaek.py` 같이 갱신. 예시 HTML(`index.html` · `examples.html`)에 직접 적힌 옛 색은 아직 그대로
+- 근거와 잰 값: [`research/audits/refloworks-2026-11-28-적용기록.md`](research/audits/refloworks-2026-11-28-적용기록.md). 후보 R-012~R-018 은 `대기`
 - **조사 기록 폴더** [`research/`](research/) 추가 — 조사를 모아 두고, DS 반영은 검토 후 채택분만
   - [`research/review.md`](research/review.md): 검토 목록. 후보 R-001~R-008 (모두 `대기`). DS 본체는 아직 안 바꿈
   - [`research/ai-tells.md`](research/ai-tells.md): AI 티 체크리스트 조사 자료(화면 V1~V11·문구 C1~C7·신뢰 T1~T6·코드) + `marketing.css` 자체 점검
