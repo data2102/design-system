@@ -23,6 +23,22 @@
 | **IBM Carbon** | 데이터 시각화·그리드·토큰 명명 | 차트 팔레트 규칙, 데이터 viz 가이드 | [carbondesignsystem.com](https://carbondesignsystem.com) |
 | **GitLab Pajamas / Nord** | 컴포넌트별 usage·접근성 문서 예시 | 모달·토스트 등 개별 컴포넌트 사용 규칙 서술 방식 | [design.gitlab.com](https://design.gitlab.com) · [nordhealth.design](https://nordhealth.design) |
 
+## 무드·이미지 레퍼런스 사이트 (시안 영감용)
+
+UI 규칙이 아니라 **분위기·이미지·색 조합**을 찾을 때. 핀터레스트에서 비슷한 이미지만 계속 나올 때 쓴다.
+
+| 사이트 | 잘하는 것 | 여백 DS에서 쓰는 곳 |
+|---|---|---|
+| **세이비** [Savee](https://savee.com) | 큐레이션된 감각적인 이미지 탐색·저장 | 랜딩 히어로·발표 자료의 무드 잡기 |
+| **코스모스** [Cosmos](https://www.cosmos.so) | 한 이미지에서 비슷한 무드로 넓혀 가기, 무드보드 | 방향을 하나 정한 뒤 변주 찾기 |
+| **디자인스퍼레이션** [Designspiration](https://www.designspiration.com) | **색상별 검색**(색 여러 개 조합) | 차트·마케팅에 쓸 색 조합 참고 |
+
+쓸 때 규칙
+- 여기서 찾은 건 **영감**이다. 실제 화면의 색은 항상 `tokens.css` 토큰으로 옮긴다(HEX 하드코딩 금지, 대비는 `a11y_check.py`).
+- 색 조합을 새 토큰으로 들이고 싶으면 바로 바꾸지 말고 [`research/review.md`](research/review.md)에 후보로 올려 검토한다.
+- 이미지를 그대로 가져다 쓰지 않는다(저작권). 무드·구도·색만 참고.
+- 업무 도구·대시보드엔 무드 이미지가 필요 없다 — 랜딩·브랜드·발표용.
+
 ## 학습용 메타 자료
 
 - DS 자동화 커리큘럼(Claude Code × Figma MCP) — 패스트캠퍼스 교육과정 소개서 → 우리 로드맵은 [`ai-workflow.md`](ai-workflow.md)

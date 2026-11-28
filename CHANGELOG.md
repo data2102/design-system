@@ -16,6 +16,7 @@
   - [`research/weekly/`](research/weekly/): 주간 AI 활용 리서치 요약 (매주 월요일 자동 추가)
   - [`research/audits/refloworks-2026-11-27.md`](research/audits/refloworks-2026-11-27.md): refloworks.com 구조·문구 점검
 ### Added
+- **무드·이미지 레퍼런스 사이트** 3곳(세이비·코스모스·디자인스퍼레이션)을 [`references.md`](references.md)에 추가 — 용도와 "영감만, 색은 토큰으로" 규칙
 - **AI 워크플로우 로드맵** [`ai-workflow.md`](ai-workflow.md) 추가 — 피그마 요소 4종(컴포넌트·프로퍼티·베리어블·스타일) ↔ 여백 코드 대응, CLAUDE.md/DESIGN.md·에이전트·Figma MCP·Code Connect 현황, 시스템 기반 프롬프트 체크리스트, QA. roadmap Phase 9로 연결
 - **화면 효과 규칙** [`effects.md`](effects.md) 추가 — 리퀴드 로고·리퀴드 글래스·셰이더 그라디언트·3D(React Three Fiber)를 랜딩 히어로에 한 개만 쓰는 예외 규칙, 토큰 색·reduced-motion·정적 대체·라이선스 체크리스트, Claude 요청 문구. ui-dictionary "움직임"·안티패턴과 연결
 - fix: 가로 막대 차트 막대가 안 보이던 문제(`.ds-bar-fill` display:block)
