@@ -23,6 +23,24 @@
 | **IBM Carbon** | 데이터 시각화·그리드·토큰 명명 | 차트 팔레트 규칙, 데이터 viz 가이드 | [carbondesignsystem.com](https://carbondesignsystem.com) |
 | **GitLab Pajamas / Nord** | 컴포넌트별 usage·접근성 문서 예시 | 모달·토스트 등 개별 컴포넌트 사용 규칙 서술 방식 | [design.gitlab.com](https://design.gitlab.com) · [nordhealth.design](https://nordhealth.design) |
 
+## 사이트 유형별 1차 레퍼런스
+
+여러 종류의 사이트(커머스·예약·커뮤니티·블로그·문서·교육·공공·모바일·금융)를 만들 때 먼저 볼 곳. 유형별 상세와 빈칸은 [`research/site-types.md`](research/site-types.md).
+
+| 디자인 시스템 | 잘 맞는 유형 |
+|---|---|
+| [TDS Mobile](https://tossmini-docs.toss.im/tds-mobile/) | 금융 · 모바일 — 여백의 뿌리와 같은 결 |
+| [SEED Design](https://seed-design.io) (당근) | 모바일 · 커뮤니티 · 커머스, 한국어 |
+| [KRDS](https://www.krds.go.kr) (범정부) | 공공 · 한국어 폼 · KWCAG |
+| [GOV.UK Design System](https://design-system.service.gov.uk) | 폼 흐름(오류 요약 · 답변 확인 · 완료) |
+| [USWDS](https://designsystem.digital.gov) | 기관 식별, 단계·절차 |
+| [Primer Brand](https://primer.style/brand/) | 블로그 · 브랜드 쇼케이스 |
+| [Nextra](https://nextra.site/docs) · [Vercel Geist](https://vercel.com/geist/snippet) | 문서 |
+| [Baymard Institute](https://baymard.com) | 커머스 · 예약 UX 근거 |
+| [Material 3](https://m3.material.io) · [Apple HIG](https://developer.apple.com/design/human-interface-guidelines) | 모바일 동작·상태 |
+
+여러 DS를 한꺼번에 비교: [Component Gallery](https://component.gallery)(부품 60종 × DS 95개) · [Design Systems Surf](https://designsystems.surf)
+
 ## 무드·이미지 레퍼런스 사이트 (시안 영감용)
 
 UI 규칙이 아니라 **분위기·이미지·색 조합**을 찾을 때. 핀터레스트에서 비슷한 이미지만 계속 나올 때 쓴다.
