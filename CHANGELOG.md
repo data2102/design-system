@@ -3,6 +3,19 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
+### Changed — 검토에서 채택 (2026-11-28, [`research/review.md`](research/review.md) R-009 · R-010 · R-011)
+- `--text-tertiary` #8b95a1 → **#5f6a78**. 안내 문장에 쓰면 흰 바탕 대비가 3.0 : 1 이었다 → 5.5 : 1 (R-009)
+- `--warm` #c96f4c → **#a8522f**. 글자·흰 글자 바탕 모두 3.1~3.6 : 1 → 5.4 : 1 (R-010). `--viz-4` 는 그대로
+- `.ds-btn-pill.primary` 바탕 `--accent` → **`--accent-strong`**, hover 는 `--accent-pressed`. 흰 글자 3.7 : 1 → 5.7 : 1 (R-011)
+- `a11y_check.py`: `text-tertiary` 기준을 3.0 → 4.5 로, `text-tertiary/bg` · `warm/surface` · `on-accent/warm` 쌍 추가. 라이트/다크 전 항목 통과
+- `tokens.py` · `yeobaek.py` · `scaffold/yeobaek.py` 같이 갱신. 예시 HTML(`index.html` · `examples.html`)에 직접 적힌 옛 색은 아직 그대로
+- 근거와 잰 값: [`research/audits/refloworks-2026-11-28-적용기록.md`](research/audits/refloworks-2026-11-28-적용기록.md). 후보 R-012~R-018 은 `대기`
+- **조사 기록 폴더** [`research/`](research/) 추가 — 조사를 모아 두고, DS 반영은 검토 후 채택분만
+  - [`research/review.md`](research/review.md): 검토 목록. 후보 R-001~R-008 (모두 `대기`). DS 본체는 아직 안 바꿈
+  - [`research/ai-tells.md`](research/ai-tells.md): AI 티 체크리스트 조사 자료(화면 V1~V11·문구 C1~C7·신뢰 T1~T6·코드) + `marketing.css` 자체 점검
+  - [`research/weekly/`](research/weekly/): 주간 AI 활용 리서치 요약 (매주 월요일 자동 추가)
+  - [`research/audits/refloworks-2026-11-27.md`](research/audits/refloworks-2026-11-27.md): refloworks.com 구조·문구 점검
+### Added
 - **AI 워크플로우 로드맵** [`ai-workflow.md`](ai-workflow.md) 추가 — 피그마 요소 4종(컴포넌트·프로퍼티·베리어블·스타일) ↔ 여백 코드 대응, CLAUDE.md/DESIGN.md·에이전트·Figma MCP·Code Connect 현황, 시스템 기반 프롬프트 체크리스트, QA. roadmap Phase 9로 연결
 - **화면 효과 규칙** [`effects.md`](effects.md) 추가 — 리퀴드 로고·리퀴드 글래스·셰이더 그라디언트·3D(React Three Fiber)를 랜딩 히어로에 한 개만 쓰는 예외 규칙, 토큰 색·reduced-motion·정적 대체·라이선스 체크리스트, Claude 요청 문구. ui-dictionary "움직임"·안티패턴과 연결
 - fix: 가로 막대 차트 막대가 안 보이던 문제(`.ds-bar-fill` display:block)

@@ -34,13 +34,13 @@ TOKENS = r"""
   --on-accent:         #ffffff;   /* 파란 버튼 위 글자 */
 
   /* 따뜻한 포인트(개인 도구/기억비서용 보조 액센트, 선택) */
-  --warm:              #c96f4c;
+  --warm:              #a8522f;   /* 글자·흰 글자 바탕 모두 4.5 넘게 (R-010, 전: #c96f4c) */
   --warm-bg:           #faece7;
 
   /* ===== 색: 텍스트 (무채색으로 조용히) ===== */
   --text-primary:      #191f28;   /* 본문/제목 */
   --text-secondary:    #4e5968;   /* 보조 설명 */
-  --text-tertiary:     #8b95a1;   /* 힌트/메타/캡션 */
+  --text-tertiary:     #5f6a78;   /* 힌트/메타/캡션 — 문장에 써도 4.5 넘게 (R-009, 전: #8b95a1) */
   --text-disabled:     #b0b8c1;
 
   /* ===== 색: 표면 / 배경 ===== */
@@ -483,8 +483,8 @@ COMPONENTS = r"""
 .ds-bars { display:flex; flex-direction:column; gap:10px; }
 .ds-bar-row { display:flex; align-items:center; gap:10px; font-size:var(--fs-caption); }
 .ds-bar-row .k { width:52px; color:var(--text-secondary); flex-shrink:0; }
-.ds-bar-track { flex:1; height:8px; border-radius:var(--radius-pill); background:var(--surface-sunken); overflow:hidden; }
-.ds-bar-fill { height:100%; border-radius:var(--radius-pill); background:var(--viz-1); transition:width var(--dur-base) var(--ease-standard); }
+.ds-bar-track { display:block; flex:1; height:8px; border-radius:var(--radius-pill); background:var(--surface-sunken); overflow:hidden; }
+.ds-bar-fill { display:block; height:100%; border-radius:var(--radius-pill); background:var(--viz-1); transition:width var(--dur-base) var(--ease-standard); }
 .ds-bar-row .v { width:28px; text-align:right; color:var(--text-tertiary); font-variant-numeric:tabular-nums; flex-shrink:0; }
 
 /* ---- 범례 (Legend) ------------------------------------- */

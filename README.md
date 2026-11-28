@@ -60,6 +60,7 @@
 | [`effects.md`](effects.md) | 화면 효과(리퀴드 로고·유리 패널·셰이더 그라디언트·3D) — 랜딩 전용 예외 규칙 + Claude 요청 문구 |
 | [`ui-dictionary.md`](ui-dictionary.md) | UI 이름 사전 — 영역별(알림·로딩·폼·AI·빈 화면·제스처·모션·이동·다크패턴·아이콘) 이름 ↔ 여백 DS 매핑 |
 | [`roadmap.md`](roadmap.md) | 발전 로드맵 (L2→L3) + 컴포넌트 백로그 |
+| [`research/`](research/) | 조사 기록 (검토 전, DS 규칙 아님) — AI 티 체크리스트, 주간 리서치, 사이트 점검. 반영 후보는 `research/review.md` 에서 검토 |
 | [`CHANGELOG.md`](CHANGELOG.md) | 버전 변경 기록 |
 
 ## 쓰는 법

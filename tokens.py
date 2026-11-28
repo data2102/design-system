@@ -38,9 +38,9 @@ RADIUS = {"sm": 8, "md": 12, "lg": 16, "xl": 20, "pill": 999}
 LIGHT = {
     "accent": "#3182f6", "accent_hover": "#2b74dc", "accent_pressed": "#2264c4",
     "accent_bg": "#e8f3ff", "on_accent": "#ffffff",
-    "warm": "#c96f4c", "warm_bg": "#faece7",
+    "warm": "#a8522f", "warm_bg": "#faece7",
     "text_primary": "#191f28", "text_secondary": "#4e5968",
-    "text_tertiary": "#8b95a1", "text_disabled": "#b0b8c1",
+    "text_tertiary": "#5f6a78", "text_disabled": "#b0b8c1",
     "bg": "#f2f4f6", "surface": "#ffffff", "surface_sunken": "#f9fafb",
     "border": "#eef1f4", "border_strong": "#d1d6db",
     "success": "#12b886", "success_bg": "#e6fcf5",
