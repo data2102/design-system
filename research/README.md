@@ -19,7 +19,7 @@ DS 본체에 반영할지는 [`review.md`](review.md) 에서 검토해서 정하
 | [`review.md`](review.md) | 검토 목록 — DS 반영 후보와 상태(대기/채택/보류/버림) |
 | [`ai-tells.md`](ai-tells.md) | AI 티 체크리스트 조사 자료 (화면·문구·신뢰·코드 신호와 처방 후보) |
 | [`weekly/`](weekly/) | 주간 AI 활용 리서치 요약 (매주 월요일 자동 추가) |
-| [`audits/`](audits/) | 사이트별 점검 기록 |
+| [`audits/`](audits/) | 사이트별 점검 기록. `…-적용기록.md` 는 사이트 사본에 먼저 적용한 것(본체와 달라진 점) |
 
 ## Claude에게 시킬 때
 
