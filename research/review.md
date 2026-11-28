@@ -35,3 +35,5 @@ DS 본체 = `tokens.css` `components.css` `dashboard.css` `marketing.css` `chart
 | R-016 | 밖으로 나가는 글 링크에만 ↗ (버튼·링크 끝의 → 는 쓰지 않음), `::selection` 을 강조색으로 | orr.design 팁 3·4 · frontend-design | tokens.css, foundations.md | 대기 | | |
 | R-017 | 실제 화면을 재는 점검 도구(대비·글자·누르는 높이·줄 길이·제목 단계·넘침, 죽은 링크)를 본체로 | 리플로 저장소 `tools/site-build/ux_check.js` · `link_check.py` | 새 파일 | 대기 | | |
 | R-018 | 새 부품 「허브」(찾기 + 갈래 칩 + 타일)를 marketing 패턴에 | refloworks 메인(11/26) | marketing.css, components.md | 대기 | | |
+| R-019 | 기본 글꼴을 Noto Sans KR → Pretendard (SIL OFL 1.1). 사이트 사본에서 먼저 바꿈 | refloworks 11/28, 후보 다섯 비교 뒤 사용자 선택 | tokens.css, tokens.py, foundations.md, yeobaek.py | 대기 | | |
+| R-020 | 새 부품: 모든 쪽 공통 위 메뉴·맨 아래(`.site-nav` `.site-foot`), 머리 옆 화면(`.ds-hub-split`), 진행 절차(`ol.ds-steps`) | refloworks 11/28 | marketing.css, components.md | 대기 | | |
