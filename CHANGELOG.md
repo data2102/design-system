@@ -3,6 +3,7 @@
 여백(Yeobaek) 디자인 시스템 변경 기록. 최신이 위로.
 
 ## [Unreleased]
+- **AI 워크플로우 로드맵** [`ai-workflow.md`](ai-workflow.md) 추가 — 피그마 요소 4종(컴포넌트·프로퍼티·베리어블·스타일) ↔ 여백 코드 대응, CLAUDE.md/DESIGN.md·에이전트·Figma MCP·Code Connect 현황, 시스템 기반 프롬프트 체크리스트, QA. roadmap Phase 9로 연결
 - **화면 효과 규칙** [`effects.md`](effects.md) 추가 — 리퀴드 로고·리퀴드 글래스·셰이더 그라디언트·3D(React Three Fiber)를 랜딩 히어로에 한 개만 쓰는 예외 규칙, 토큰 색·reduced-motion·정적 대체·라이선스 체크리스트, Claude 요청 문구. ui-dictionary "움직임"·안티패턴과 연결
 - fix: 가로 막대 차트 막대가 안 보이던 문제(`.ds-bar-fill` display:block)
 - **UI 이름 사전** [`ui-dictionary.md`](ui-dictionary.md) 추가 — 10개 영역(알림과 피드백·로딩·입력 폼·AI 화면·빈 화면·제스처·움직임·이동 구조·다크 패턴·메뉴 아이콘 별명)별 UI 이름 ↔ 여백 DS 클래스 매핑, 고르는 규칙, 여백식 예시 문구. 빈칸은 roadmap "UI 사전 기반 백로그"로

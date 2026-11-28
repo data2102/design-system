@@ -25,6 +25,7 @@
 
 ## 학습용 메타 자료
 
+- DS 자동화 커리큘럼(Claude Code × Figma MCP) — 패스트캠퍼스 교육과정 소개서 → 우리 로드맵은 [`ai-workflow.md`](ai-workflow.md)
 - 화면 효과 오픈소스 4종 고르기 — [HANIEE_IM 가이드](https://hani.nioh.cloud/guides/claude-code-site-effects) → 우리 규칙은 [`effects.md`](effects.md)
 - UI 이름 사전(영역 분류의 기준) — [우디디자인랩 UI 미니 사전](https://woodydesignlab.com/ui/dict) → 우리 매핑은 [`ui-dictionary.md`](ui-dictionary.md)
 

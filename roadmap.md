@@ -108,6 +108,13 @@ UI 이름 사전을 영역별로 훑어 나온 빈칸. 실제 도구에서 필�
 - [x] 나머지 도구(일통계·트래픽·원가·매출) 전환 완료 — `COMPAT` 레이어로 레거시 변수명 연결, 커버리지 자동검증
 - [ ] (선택) 여러 폴더를 한 번에 갱신하는 중앙 업데이터
 
+### Phase 9 — AI 워크플로우 (Claude Code × Figma MCP) → [`ai-workflow.md`](ai-workflow.md)
+- [ ] `CLAUDE.md` — 이 repo 작업 규칙(토큰만, HEX 금지, 수정 후 a11y_check·build_yeobaek)
+- [ ] `DESIGN.md` — 다른 프로젝트에 복사하는 한 장 요약
+- [ ] 피그마 Variables 동기화 (tokens.css → 라이트/다크 모드)
+- [ ] 쇼케이스 자동 생성 (CSS 스캔)
+- [ ] QA 에이전트 체크리스트 · 피그마 컴포넌트 라이브러리 · Code Connect
+
 ## 버전 규칙
 
 - Foundation 보강·컴포넌트 추가 = minor (v1.1, v1.2 …)
